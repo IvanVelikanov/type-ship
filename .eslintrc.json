@@ -1,0 +1,427 @@
+{
+  "root": true,
+
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true
+  },
+
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/strict-type-checked",
+    "plugin:@typescript-eslint/stylistic-type-checked",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:unicorn/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:eslint-comments/recommended",
+    "plugin:jsdoc/recommended-typescript-error"
+  ],
+
+  "ignorePatterns": ["dist"],
+
+  "parser": "@typescript-eslint/parser",
+
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
+  },
+
+  "plugins": [
+    "@typescript-eslint",
+    "unicorn",
+    "import",
+    "sonarjs",
+    "eslint-comments",
+    "jsdoc"
+  ],
+
+  "rules": {
+    // BASE ESLINT RULES START
+    "eqeqeq": "error",
+    "no-self-compare": "error",
+    "no-template-curly-in-string": "error",
+    "no-unmodified-loop-condition": "error",
+    "curly": "error",
+    "no-undefined": "error",
+    "no-prototype-builtins": "error",
+    "prefer-const": "error",
+    "no-unsafe-finally": "error",
+    "no-shadow-restricted-names": "error",
+
+    "no-console": "warn",
+    "no-useless-rename": "warn",
+    "no-lonely-if": "warn",
+    "no-useless-escape": "warn",
+    "no-extra-semi": "warn",
+    // BASE ESLINT RULES END
+
+    // @TYPESCRIPT-ESLINT PLUGIN RULES START
+    // Strict 'no-any' rules -- NEVER CHANGE THESE
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-unsafe-argument": "error",
+    "@typescript-eslint/no-unsafe-member-access": "error",
+    "@typescript-eslint/no-unsafe-call": "error",
+    "@typescript-eslint/no-unsafe-return": "error",
+    "@typescript-eslint/no-unsafe-assignment": "error",
+
+    // Async rules
+    "@typescript-eslint/await-thenable": "error",
+    "@typescript-eslint/no-misused-promises": "error",
+    "@typescript-eslint/promise-function-async": [
+      "error",
+      { "allowAny": false }
+    ],
+    "no-return-await": "off", // has to be off for the next line to work correctly
+    "@typescript-eslint/return-await": ["error", "always"],
+
+    // Class-related rules
+    "@typescript-eslint/prefer-readonly": "error",
+    "@typescript-eslint/unbound-method": "error",
+    "@typescript-eslint/no-extraneous-class": "error",
+    "@typescript-eslint/parameter-properties": [
+      "error",
+      { "allow": [], "prefer": "class-property" }
+    ],
+
+    "@typescript-eslint/member-ordering": "warn",
+    "@typescript-eslint/explicit-member-accessibility": "warn",
+
+    // Other type-checking-rules
+    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-var-requires": "error",
+    "@typescript-eslint/method-signature-style": "error",
+    "@typescript-eslint/no-unsafe-unary-minus": "error",
+    "no-unused-expressions": "off", // has to be off for the next line to work correctly
+    "@typescript-eslint/no-unused-expressions": "error",
+    "no-use-before-define": "off", // has to be off for the next line to work correctly
+    "@typescript-eslint/no-use-before-define": "error",
+    "@typescript-eslint/prefer-enum-initializers": "error",
+    "@typescript-eslint/switch-exhaustiveness-check": "error",
+    "@typescript-eslint/no-import-type-side-effects": "error",
+    "no-magic-numbers": "off", // has to be off for the next line to work correctly
+    "@typescript-eslint/no-magic-numbers": [
+      "error",
+      {
+        "ignore": [0, 1],
+        "ignoreReadonlyClassProperties": true,
+        "ignoreEnums": true,
+        "ignoreNumericLiteralTypes": false,
+        "ignoreTypeIndexes": false
+      }
+    ],
+
+    "no-shadow": "off", // has to be off for the next line to work correctly
+    "@typescript-eslint/no-shadow": "error",
+    "no-redeclare": "off", // has to be off for the next line to work correctly
+    "@typescript-eslint/no-redeclare": [
+      "error",
+      { "ignoreDeclarationMerge": false }
+    ],
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "types": {
+          "React.FC": "It doesn't provide proper intellisense for default props - type your props inline instead",
+          "FC": "It doesn't provide proper intellisense for default props - type your props inline instead"
+        }
+      }
+    ],
+
+    "@typescript-eslint/no-unnecessary-type-assertion": "warn",
+    "@typescript-eslint/no-inferrable-types": "warn",
+
+    "@typescript-eslint/typedef": "off", // with TS compiler and other ESLint rules setup properly, this rule is worse than useless -- keep it off
+    "@typescript-eslint/explicit-module-boundary-types": "off", // useless with @typescript-eslint/explicit-function-return-type turned on
+
+    // Strict type-checking
+    "@typescript-eslint/no-unnecessary-condition": "error",
+    "@typescript-eslint/no-confusing-void-expression": "error",
+
+    // Stylistic type-checking
+    "@typescript-eslint/strict-boolean-expressions": [
+      "error",
+      {
+        "allowString": false,
+        "allowNumber": false,
+        "allowNullableObject": false,
+        "allowNullableBoolean": false,
+        "allowNullableString": false,
+        "allowNullableNumber": false,
+        "allowNullableEnum": false,
+        "allowAny": false,
+        "allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing": false
+      }
+    ],
+
+    "@typescript-eslint/prefer-optional-chain": "warn",
+    "@typescript-eslint/consistent-type-definitions": "warn",
+    "@typescript-eslint/prefer-nullish-coalescing": "warn",
+    "@typescript-eslint/array-type": ["warn", { "default": "generic" }],
+
+    // Naming conventions
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "selector": "import",
+        "format": null
+      },
+
+      {
+        "selector": "default",
+        "format": ["camelCase"]
+      },
+
+      {
+        "selector": "variable",
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"]
+      },
+      {
+        "selector": "variable",
+        "types": ["boolean"],
+        "format": ["PascalCase"],
+        "prefix": ["is", "are", "should", "has", "can", "did", "will"]
+      },
+      {
+        "selector": "variable",
+        "types": ["function"],
+        "format": ["camelCase"]
+      },
+      {
+        "selector": ["parameter", "classProperty"],
+        "format": ["camelCase", "UPPER_CASE"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": ["parameterProperty"],
+        "format": ["camelCase", "UPPER_CASE"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": ["typeProperty", "objectLiteralProperty"],
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"]
+      },
+      {
+        "selector": [
+          "classProperty",
+          "objectLiteralProperty",
+          "typeProperty",
+          "classMethod",
+          "objectLiteralMethod",
+          "typeMethod",
+          "accessor",
+          "enumMember"
+        ],
+        "format": null,
+        "modifiers": ["requiresQuotes"]
+      },
+
+      {
+        "selector": [
+          "typeLike",
+          "interface",
+          "typeAlias",
+          "enum",
+          "enumMember"
+        ],
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "objectLiteralMethod",
+        "format": ["camelCase", "PascalCase"]
+      }
+    ],
+
+    // Import-Export rules
+    "@typescript-eslint/no-require-imports": "error",
+    "@typescript-eslint/no-useless-empty-export": "error",
+
+    "no-duplicate-imports": "warn",
+    "@typescript-eslint/consistent-type-imports": [
+      "warn",
+      { "prefer": "type-imports", "fixStyle": "inline-type-imports" }
+    ],
+    "@typescript-eslint/consistent-type-exports": "warn",
+    // @TYPESCRIPT-ESLINT PLUGIN RULES END
+
+    // For some reason this rule doesn't work properly in my current setup -- fix it
+    "import/no-unresolved": "off",
+
+    // IMPORT PLUGIN RULES START
+    "import/no-deprecated": "error",
+    "import/no-empty-named-blocks": "error",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "includeInternal": true,
+        "includeTypes": true,
+        "devDependencies": true,
+        "peerDependencies": false,
+        "bundledDependencies": false,
+        "optionalDependencies": false
+      }
+    ],
+    "import/no-mutable-exports": "error",
+    "import/no-amd": "error",
+    "import/no-commonjs": "error",
+    "import/unambiguous": "error",
+    "import/no-absolute-path": "error",
+    "import/no-cycle": "error",
+    "import/no-self-import": "error",
+
+    "import/first": "warn",
+    "import/exports-last": "warn",
+    "import/no-default-export": "warn",
+    "import/no-useless-path-segments": "warn",
+    "import/order": [
+      "warn",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "index",
+          "sibling",
+          "parent",
+          "object"
+        ]
+      }
+    ],
+
+    "import/no-relative-parent-imports": "off",
+    "import/no-unused-modules": [
+      "off", // very useful but produces lots of false positives -- turn it on when actively linting and off when coding
+      {
+        "missingExports": false, // this one reports falsely on index file that exist solely to EXPORT contents of a folder -- keep it off
+        "unusedExports": true
+      }
+    ],
+    // IMPORT PLUGIN RULES END
+
+    // UNICORN PLUGIN RULES START
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "kebabCase": true
+        },
+        "ignore": ["getModalFromDOM.ts", "vite-env.d.ts"]
+      }
+    ],
+    "unicorn/prefer-number-properties": "error",
+    "unicorn/no-array-for-each": "error",
+    "unicorn/no-negated-condition": "error",
+    "unicorn/explicit-length-check": "error",
+    "unicorn/prefer-includes": "error",
+    "unicorn/no-instanceof-array": "error",
+    "unicorn/prefer-optional-catch-binding": "error",
+    "unicorn/prefer-ternary": "error",
+    "unicorn/consistent-function-scoping": "error",
+    "unicorn/no-empty-file": "error",
+    "unicorn/prefer-spread": "error",
+    "unicorn/no-useless-spread": "error",
+    "unicorn/prefer-query-selector": "error",
+
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "allowList": {
+          "Props": true
+        },
+        "ignore": ["vite-env.d.*"]
+      }
+    ],
+
+    "unicorn/no-null": "off", // I prefer to use null whenever I assign a value explicitly and reserve undefined for the values that are actually undefined
+    "unicorn/no-typeof-undefined": "off", // this rule conflicts with the no-undefined rule, which I like quite a bit, so this one stays off
+    "unicorn/no-static-only-class": "off", // no-extraneous-class ESLint rule is sufficient
+    "unicorn/no-nested-ternary": "off", // this rule is useless with prettier enabled
+    // UNICORN PLUGIN RULES END
+
+    // SONARJS PLUGIN RULES START
+    "sonarjs/elseif-without-else": "error",
+
+    "sonarjs/no-inverted-boolean-check": "warn",
+    "sonarjs/no-duplicate-string": "warn",
+    "sonarjs/prefer-immediate-return": "warn",
+    // SONARJS PLUGIN RULES END
+
+    // ESLINT COMMENTS PLUGIN RULES START
+    "eslint-comments/disable-enable-pair": "error",
+    "eslint-comments/no-aggregating-enable": "error",
+    "eslint-comments/no-duplicate-disable": "error",
+    "eslint-comments/no-unlimited-disable": "error",
+    "eslint-comments/no-unused-disable": "error",
+    "eslint-comments/no-unused-enable": "error",
+    "eslint-comments/no-restricted-disable": ["error", "*", "!*/"],
+    "eslint-comments/no-use": [
+      "error",
+      { "allow": ["eslint-disable-next-line"] }
+    ],
+    "eslint-comments/require-description": ["error", { "ignore": [] }], // be very careful with this one. If you break up the description into multiple lines, it breaks the no-restricted-disable rule
+    // ESLINT COMMENTS PLUGIN RULES END
+
+    // JSDOC PLUGIN RULES START
+    "jsdoc/require-jsdoc": [
+      "error",
+      {
+        "require": {
+          "ArrowFunctionExpression": true,
+          "ClassDeclaration": true,
+          "ClassExpression": true,
+          "FunctionDeclaration": true,
+          "FunctionExpression": true,
+          "MethodDefinition": true
+        },
+        "contexts": [
+          "TSInterfaceDeclaration",
+          "TSTypeAliasDeclaration",
+          "TSEnumDeclaration"
+        ]
+      }
+    ],
+    "jsdoc/no-blank-block-descriptions": "error",
+    "jsdoc/no-blank-blocks": "error",
+    "jsdoc/check-indentation": "error",
+    "jsdoc/informative-docs": "error",
+    "jsdoc/no-bad-blocks": "error",
+    "jsdoc/require-asterisk-prefix": "error",
+    "jsdoc/require-description": [
+      "error",
+      {
+        "contexts": [
+          "TSInterfaceDeclaration",
+          "TSTypeAliasDeclaration",
+          "TSEnumDeclaration",
+          "FunctionDeclaration",
+          "FunctionExpression",
+          "MethodDefinition",
+          "ArrowFunctionExpression"
+        ],
+        "descriptionStyle": "tag"
+      }
+    ],
+    "jsdoc/require-description-complete-sentence": "error",
+    "jsdoc/require-example": [
+      "error",
+      {
+        "contexts": [
+          "TSInterfaceDeclaration",
+          "TSTypeAliasDeclaration",
+          "TSEnumDeclaration",
+          "FunctionDeclaration",
+          "FunctionExpression",
+          "MethodDefinition",
+          "ArrowFunctionExpression"
+        ]
+      }
+    ],
+    "jsdoc/require-file-overview": "error",
+
+    "jsdoc/check-examples": "off" // This rule is unsupported in ESLint v8 -- turn it on when it gets incorporated
+    // JSDOC PLUGIN RULES END
+  }
+}
