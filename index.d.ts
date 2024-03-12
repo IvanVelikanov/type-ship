@@ -1,5 +1,5 @@
 /**
- * @file An entry point for all of the exported types in the src folder.
+ * @file An entry point for the library.
  */
 
-export * from './src/test-type';
+export * from './src';

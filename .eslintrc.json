@@ -19,7 +19,7 @@
     "plugin:jsdoc/recommended-typescript-error"
   ],
 
-  "ignorePatterns": ["dist"],
+  "ignorePatterns": ["test"],
 
   "parser": "@typescript-eslint/parser",
 
@@ -356,10 +356,18 @@
     "eslint-comments/no-unlimited-disable": "error",
     "eslint-comments/no-unused-disable": "error",
     "eslint-comments/no-unused-enable": "error",
-    "eslint-comments/no-restricted-disable": ["error", "*", "!*/"],
+    "eslint-comments/no-restricted-disable": [
+      "error",
+      "*",
+      "!*/",
+      "!@typescript-eslint/no-unused-vars",
+      "!@typescript-eslint/no-explicit-any"
+    ],
     "eslint-comments/no-use": [
       "error",
-      { "allow": ["eslint-disable-next-line"] }
+      {
+        "allow": ["eslint-disable-next-line", "eslint-disable", "eslint-enable"]
+      }
     ],
     "eslint-comments/require-description": ["error", { "ignore": [] }], // be very careful with this one. If you break up the description into multiple lines, it breaks the no-restricted-disable rule
     // ESLINT COMMENTS PLUGIN RULES END
