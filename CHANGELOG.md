@@ -2,6 +2,12 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.3.0 - 2024-03-13
+
+### Added
+
+- StrictExtract type (opposite of StrictExclude).
+
 ## 0.2.1 - 2024-03-13
 
 ### Changed
@@ -12,7 +18,7 @@ All notable changes to the project shall be documented here.
 
 ### Added
 
-- StrictExclude type
+- StrictExclude type.
 
 ### Changed
 

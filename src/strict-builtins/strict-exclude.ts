@@ -2,11 +2,14 @@
  * @file A stricter version of the built-in Exclude utility type ({@link https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers TS Exclude}).
  */
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- Need this here for the @link in JSDoc.
+import type { StrictExtract } from './strict-extract';
+
 /**
  * @summary Exclude from FullSet those types that are assignable to ExcludedSubset.
  * @template FullSet A type or a union of types from which `ExcludedSubset` types are to be excluded.
  * @template ExcludedSubset A type of a union of types that gets excluded from `FullSet`.
- * @description A stricter version of TS's built-in Exclude type.
+ * @description A stricter version of TS's built-in Exclude type. Opposite of {@link StrictExtract}.
  *
  * Unlike the default Exclude, this one does not allow types that aren't already present in the `FullSet` to be excluded.
  * @example
@@ -23,12 +26,11 @@
  * type Bar = 'bar';
  * ```
  * @todo
- * While this utility type is useful as-is, there is a number of issues that need to be addressed for it to be fully bulletproof:
  *
  * **Issue #1:**
  * When `FullSet` is broad (for example, string or number types), StrictExclude gets defeated and collapses down to the provided `FullSet` type.
  * ```
- * import type { StrictOmit } from 'type-ship';
+ * import type { StrictExclude } from 'type-ship';
  *
  * type CollapsesDownToString = StrictExclude<string, 'foo'>;
  * type CollapsesDownToNumber = StrictExclude<number, 100>;
