@@ -2,6 +2,12 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.2.1 - 2024-03-13
+
+### Changed
+
+- .d.ts extensions to .ts.
+
 ## 0.2.0 - 2024-03-13
 
 ### Added
