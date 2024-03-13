@@ -2,6 +2,12 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.3.1 - 2024-03-13
+
+### Fixed
+
+- StrictExtract export issue.
+
 ## 0.3.0 - 2024-03-13
 
 ### Added
