@@ -6,6 +6,7 @@ import type { ObjectKeyTypes } from '../helpers/object-key-types';
 import type { EmptyObject } from '../helpers/empty-object';
 
 /**
+ * @summary Construct a type with the properties of ObjectLike except for those in type KeysUnion.
  * @template ObjectLike An object-like type or interface from which some keys are to be excluded.
  * @template KeysUnion A union of keys that are present in the ObjectLike generic, used to excluded keys from the created type.
  * @description While there are some good reasons to keep Omit so wide open (see {@link https://github.com/microsoft/TypeScript/issues/30825 TS issue 30825}),
@@ -73,6 +74,9 @@ import type { EmptyObject } from '../helpers/empty-object';
  * ```
  * The `wildWest` in the example above shows no errors whatsoever.
  * What it should do though is allow the `anything` and `else` keys but display TS errors on the `foo` and `bar` keys.
+ *
+ * **Issue #2:**
+ * As of now, this type may not work correctly with Maps or Sets.
  * @see
  * Types used under the hood: {@link ObjectKeyTypes}, {@link EmptyObject}.
  */

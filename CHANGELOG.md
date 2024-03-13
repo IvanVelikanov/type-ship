@@ -2,6 +2,16 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.2.0 - 2024-03-13
+
+### Added
+
+- StrictExclude type
+
+### Changed
+
+- Add Issue #2 to the StrictOmit type: for the time being, it may not work correctly with Sets or Maps.
+
 ## 0.1.0 - 2024-03-12
 
 ### Added

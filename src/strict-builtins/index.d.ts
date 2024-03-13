@@ -3,3 +3,4 @@
  */
 
 export * from './strict-omit';
+export * from './strict-exclude';
