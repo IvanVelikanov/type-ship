@@ -6,10 +6,10 @@
 import type { StrictExtract } from './strict-extract';
 
 /**
- * @summary Exclude from FullSet those types that are assignable to ExcludedSubset.
+ * @summary Exclude from `FullSet` those types that are assignable to `ExcludedSubset`.
  * @template FullSet A type or a union of types from which `ExcludedSubset` types are to be excluded.
- * @template ExcludedSubset A type of a union of types that gets excluded from `FullSet`.
- * @description A stricter version of TS's built-in Exclude type. Opposite of {@link StrictExtract}.
+ * @template ExcludedSubset A type or a union of types that gets excluded from `FullSet`.
+ * @description A stricter version of TS's built-in {@link Exclude} utility type. Opposite of {@link StrictExtract}.
  *
  * Unlike the default Exclude, this one does not allow types that aren't already present in the `FullSet` to be excluded.
  * @example

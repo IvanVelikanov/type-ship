@@ -6,10 +6,10 @@
 import type { StrictExclude } from './strict-exclude';
 
 /**
- * @summary Extract from FullSet those types that are assignable to ExtractedSubset.
+ * @summary Extract from `FullSet` those types that are assignable to `ExtractedSubset`.
  * @template FullSet A type or a union of types from which `ExtractedSubset` types are to be extracted.
- * @template ExtractedSubset A type of a union of types that gets extracted from `FullSet`.
- * @description A stricter version of TS's built-in Extract type. Opposite of {@link StrictExclude}.
+ * @template ExtractedSubset A type or a union of types that gets extracted from `FullSet`.
+ * @description A stricter version of TS's built-in {@link Extract} utility type. Opposite of {@link StrictExclude}.
  *
  * Unlike the default Extract, this one does not allow types that aren't already present in the `FullSet` to be extracted.
  * @example
@@ -28,7 +28,7 @@ import type { StrictExclude } from './strict-exclude';
  * @todo
  *
  * **Issue #1:**
- * When `FullSet` is broad (for example, string or number types), StrictExtract collapses down `never`.
+ * When `FullSet` is broad (for example, string or number types), StrictExtract collapses down to `never`.
  * ```
  * import type { StrictExtract } from 'type-ship';
  *

@@ -5,3 +5,4 @@
 export * from './strict-omit';
 export * from './strict-exclude';
 export * from './strict-extract';
+export * from './strict-pick';

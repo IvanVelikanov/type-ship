@@ -19,7 +19,5 @@ import type { StrictOmit } from '../strict-builtins/strict-omit';
  * @see {@link https://typescript.tv/errors/#ts2344 TS-2322}
  * @see
  * Used internally in: {@link StrictOmit}.
- * @see
- * Types used under the hood: {@link ObjectKeyTypes}.
  */
 export type EmptyObject = Record<PropertyKey, never>;

@@ -2,13 +2,18 @@
  * @file A stricter version of the built-in Omit utility type ({@link https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys TS Omit}).
  */
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- Need this for JSDoc @link.
+import type { StrictPick } from './strict-pick';
+
 import type { EmptyObject } from '../helpers/empty-object';
 
 /**
- * @summary Construct a type with the properties of ObjectLike except for those in type KeysUnion.
+ * @summary Construct a type with the properties of `ObjectLike` except for those in type `KeysUnion`.
  * @template ObjectLike An object-like type or interface from which some keys are to be excluded.
- * @template KeysUnion A union of keys that are present in the ObjectLike generic, used to excluded keys from the created type.
- * @description While there are some good reasons to keep Omit so wide open (see {@link https://github.com/microsoft/TypeScript/issues/30825 TS issue 30825}),
+ * @template KeysUnion A union of keys that are present in the ObjectLike generic, used to exclude keys from the created type.
+ * @description A stricter version of TS's built-in {@link Omit} utility type. Opposite of {@link StrictPick}.
+ *
+ * While there are some good reasons to keep Omit so wide open (see {@link https://github.com/microsoft/TypeScript/issues/30825 TS issue 30825}),
  * it is baffling that there isn't a stricter built-in alternative to the loose built-in Omit. This, along with the other strict versions of built-in
  * utility types is an attempt to fix that.
  *
@@ -48,7 +53,7 @@ import type { EmptyObject } from '../helpers/empty-object';
  * type Bar = StrictOmit<'nonObjectLikeTypeStringForExample', 'foo' | 'bazz'>;
  * ```
  * **Result:**
- * @see {@link https://typescript.tv/errors/#ts2344 TS 2344}. Type 'string' does not satisfy the constraint 'object' (error on the **first** generic parameter).
+ * @see {@link https://typescript.tv/errors/#ts2344 TS 2344}. Type 'string' does not satisfy the constraint 'Record<PropertyKey, any>' (error on the **first** generic parameter).
  * ```
  * type Bar = StrictOmit<FooBarBazz, 'foo' | 'bazzbazzbazz'>;
  * ```
