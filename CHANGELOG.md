@@ -2,6 +2,12 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.3.2 - 2024-03-14
+
+### Removed
+
+- ObjectKeyTypes type in favor of the built-in PropertyKey type.
+
 ## 0.3.1 - 2024-03-13
 
 ### Fixed

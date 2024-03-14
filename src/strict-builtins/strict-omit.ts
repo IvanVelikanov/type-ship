@@ -2,7 +2,6 @@
  * @file A stricter version of the built-in Omit utility type ({@link https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys TS Omit}).
  */
 
-import type { ObjectKeyTypes } from '../helpers/object-key-types';
 import type { EmptyObject } from '../helpers/empty-object';
 
 /**
@@ -78,11 +77,11 @@ import type { EmptyObject } from '../helpers/empty-object';
  * **Issue #2:**
  * As of now, this type may not work correctly with Maps or Sets.
  * @see
- * Types used under the hood: {@link ObjectKeyTypes}, {@link EmptyObject}.
+ * Types used under the hood: {@link EmptyObject}.
  */
 export type StrictOmit<
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- unknown in the Record leads to some strange errors. Investigate it later!
-  ObjectLike extends Record<ObjectKeyTypes, any>,
+  ObjectLike extends Record<PropertyKey, any>,
   KeysUnion extends keyof ObjectLike
 > = Omit<ObjectLike, KeysUnion> extends EmptyObject
   ? EmptyObject

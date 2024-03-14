@@ -2,7 +2,6 @@
  * @file Shorthand for the empty object type.
  */
 
-import type { ObjectKeyTypes } from './object-key-types';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars -- Needs to be here for the JSDoc @link tags to work correctly. I wonder if there's a more elegant approach though...
 import type { StrictOmit } from '../strict-builtins/strict-omit';
 
@@ -23,4 +22,4 @@ import type { StrictOmit } from '../strict-builtins/strict-omit';
  * @see
  * Types used under the hood: {@link ObjectKeyTypes}.
  */
-export type EmptyObject = Record<ObjectKeyTypes, never>;
+export type EmptyObject = Record<PropertyKey, never>;

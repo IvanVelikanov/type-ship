@@ -3,4 +3,3 @@
  */
 
 export * from './empty-object';
-export * from './object-key-types';
