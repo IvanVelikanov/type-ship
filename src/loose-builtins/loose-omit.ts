@@ -1,71 +1,52 @@
 /**
- * @file A stricter version of the built-in Omit utility type ({@link https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys TS Omit}).
+ * @file Loose version of {@link StrictOmit}.
+ * Same logic as {@link https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys built-in TS Omit}
+ * but limited to object-like types and also provides loose autocomplete.
  */
 
 /* eslint-disable @typescript-eslint/no-unused-vars -- Need this for JSDoc @link tags. */
-import type { StrictPick } from './strict-pick';
-import type { LooseOmit } from '../loose-builtins/loose-omit';
+import type { StrictOmit } from '../strict-builtins/strict-omit';
 import type { EXPERIMENTAL_LooseOmit } from '../EXPERIMENTAL/EXPERIMENAL_loose-omit';
 /* eslint-enable @typescript-eslint/no-unused-vars -- Types actually used for StrictOmit should come after this line. */
 
 import type { EmptyObject } from '../helpers/empty-object';
+import type { LooseAutocomplete } from '../helpers/loose-autocomplete';
 
 /**
  * @summary Construct a type with the properties of `ObjectLike` except for those in type `KeysUnion`.
  * @template ObjectLike An object-like type or interface from which keys from `KeysUnion` are to be excluded.
- * @template KeysUnion A union of keys that are present in the `ObjectLike` generic, used to exclude keys from the created type.
- * @description A stricter version of TS's built-in {@link Omit} utility type.
+ * @template KeysUnion A union of keys to be excluded from `ObjectLike`.
+ * @description Same logic as {@link Omit} (see {@link https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys built-in TS Omit})
+ * but limited to object-like types and also provides loose autocomplete via {@link LooseAutocomplete}.
  *
- * Opposite of {@link StrictPick}.
- *
- * Strict version of {@link LooseOmit}.
- *
- * While there are some good reasons to keep Omit so wide open (see {@link https://github.com/microsoft/TypeScript/issues/30825 TS issue 30825}),
- * it is baffling that there isn't a stricter built-in alternative to the loose built-in Omit. This, along with the other strict versions of built-in
- * utility types is an attempt to fix that.
+ * Loose version of {@link StrictOmit}.
  *
  * **Use-cases**:
  * - Creating a new type or interface which omits one or more keys from another object-like type or interface -
- * only the keys already present in the original type/interface can be selected.
+ * arbitrary keys can be used for selection.
  * @example
- * **SUCCESS:**
  * ```
- * import type { StrictOmit } from 'type-ship';
- *
- * interface FooBarBazz {
+ * type FooBarBazz = {
  *   foo: string;
  *   bar: string;
  *   bazz: string;
- * }
+ * };
  *
- * type Bar = StrictOmit<FooBarBazz, 'foo' | 'bazz'>;
+ * type BarBazz = LooseOmit<FooBarBazz, 'foo' | 'gabagoobaa'>
+ * /*        ___________________________         ^
+ *           | No error here but shows |         |
+ *           | 'foo' | 'bar' | 'bazz'  | ---------
+ *           | for autocomplete.       |
+ *           ---------------------------
+ * /*
  * ```
  * **Result:**
  * ```
- * type Bar = {
- *   bar: string;
- * }
- * ```
- * @example
- * **ERRORS:**
- * ```
- * import type { StrictOmit } from 'type-ship';
- *
- * interface FooBarBazz {
- *   foo: string;
+ * type BarBazz = {
  *   bar: string;
  *   bazz: string;
- * }
- *
- * type Bar = StrictOmit<'nonObjectLikeTypeStringForExample', 'foo' | 'bazz'>;
+ * };
  * ```
- * **Result:**
- * @see {@link https://typescript.tv/errors/#ts2344 TS 2344}. Type 'string' does not satisfy the constraint 'Record<PropertyKey, any>' (error on the **first** generic parameter).
- * ```
- * type Bar = StrictOmit<FooBarBazz, 'foo' | 'bazzbazzbazz'>;
- * ```
- * **Result:**
- * @see {@link https://typescript.tv/errors/#ts2344 TS 2344}. Type '"bazzbazzbazz"' is not assignable to type 'keyof FooBarBazz' (error on the **second** generic parameter).
  * @todo
  * While this utility type is useful as-is, there is a number of issues that need to be addressed for it to be fully bulletproof:
  *
@@ -91,6 +72,7 @@ import type { EmptyObject } from '../helpers/empty-object';
  *
  * **Issue #3:**
  * Arrays can be passed into `ObjectLike` generic -- there's a rather simple way to change this and it needs to happen soon.
+ *
  * **Issue 4:**
  * No autocomplete for `KeysUnion` number and symbol keys -- only for strings.
  * An attempt to fix that will first be conducted in {@link EXPERIMENTAL_LooseOmit}.
@@ -99,13 +81,19 @@ import type { EmptyObject } from '../helpers/empty-object';
  * We shall see...
  * @see
  * Types used under the hood:
- * - Helpers: {@link EmptyObject};
+ * - Helpers: {@link LooseAutocomplete}, {@link EmptyObject};
  * - Built-in TS Utilities: {@link Omit}, {@link PropertyKey}, {@link Record}.
  */
-export type StrictOmit<
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- unknown in the Record leads to some strange errors. Investigate it later!
+export type LooseOmit<
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- unknown doesn't work here. Investigate.
   ObjectLike extends Record<PropertyKey, any>,
-  KeysUnion extends keyof ObjectLike
-> = Omit<ObjectLike, KeysUnion> extends EmptyObject
+  KeysUnion extends LooseAutocomplete<
+    keyof ObjectLike extends PropertyKey ? keyof ObjectLike : PropertyKey,
+    PropertyKey
+  >
+> = Omit<
+  ObjectLike,
+  KeysUnion extends PropertyKey ? KeysUnion : PropertyKey
+> extends EmptyObject
   ? EmptyObject
-  : Omit<ObjectLike, KeysUnion>;
+  : Omit<ObjectLike, KeysUnion extends PropertyKey ? KeysUnion : PropertyKey>;

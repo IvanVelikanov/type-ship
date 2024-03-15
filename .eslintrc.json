@@ -19,7 +19,7 @@
     "plugin:jsdoc/recommended-typescript-error"
   ],
 
-  "ignorePatterns": ["test"],
+  "ignorePatterns": ["test", "EXPERIMENTAL"],
 
   "parser": "@typescript-eslint/parser",
 
@@ -307,8 +307,7 @@
       {
         "cases": {
           "kebabCase": true
-        },
-        "ignore": ["getModalFromDOM.ts", "vite-env.d.ts"]
+        }
       }
     ],
     "unicorn/prefer-number-properties": "error",
@@ -361,7 +360,8 @@
       "*",
       "!*/",
       "!@typescript-eslint/no-unused-vars",
-      "!@typescript-eslint/no-explicit-any"
+      "!@typescript-eslint/no-explicit-any",
+      "!jsdoc/require-example"
     ],
     "eslint-comments/no-use": [
       "error",

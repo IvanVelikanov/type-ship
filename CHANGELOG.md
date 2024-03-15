@@ -2,6 +2,14 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.5.0 - 2024-03-15
+
+### Added
+
+- LooseOmit type (looser version of StrictOmit).
+- EXPERIMENTAL_LooseOmit type (an attempt to fix certain issues with LooseOmit and StrictOmit -- see Issue #4 in these types' JSDocs for more info).
+- LooseAutocomplete type (primarily as a helper for LooseOmit and EXPERIMENTAL_LooseOmit -- although it has other uses too).
+
 ## 0.4.0 - 2024-03-14
 
 ### Added

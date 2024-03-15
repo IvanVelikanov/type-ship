@@ -3,3 +3,4 @@
  */
 
 export * from './empty-object';
+export * from './loose-autocomplete';
