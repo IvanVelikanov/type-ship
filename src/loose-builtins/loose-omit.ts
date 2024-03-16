@@ -7,7 +7,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars -- Need this for JSDoc @link tags. */
 import type { StrictOmit } from '../strict-builtins/strict-omit';
 import type { EXPERIMENTAL_LooseOmit } from '../EXPERIMENTAL/EXPERIMENAL_loose-omit';
-/* eslint-enable @typescript-eslint/no-unused-vars -- Types actually used for StrictOmit should come after this line. */
+/* eslint-enable @typescript-eslint/no-unused-vars -- Types actually used for LooseOmit should come after this line. */
 
 import type { EmptyObject } from '../helpers/empty-object';
 import type { LooseAutocomplete } from '../helpers/loose-autocomplete';
@@ -76,7 +76,7 @@ import type { LooseAutocomplete } from '../helpers/loose-autocomplete';
  * **Issue 4:**
  * No autocomplete for `KeysUnion` number and symbol keys -- only for strings.
  * An attempt to fix that will first be conducted in {@link EXPERIMENTAL_LooseOmit}.
- * But there is a case to be made that types should be created for Omit and Pick types (both Loose and Strict varieties) that *ONLY* accepts strings for object keys in the `KeysUnion`.
+ * But there is a case to be made that types should be created for Omit and Pick types (both Loose and Strict varieties) that *ONLY* accept strings for object keys in the `KeysUnion`.
  * Using numbers as keys is plainly bad practice and using symbols is rare enough that using the wide {@link PropertyKey} type for keys in these utilities -- while strictly more "correct" -- will probably lead to more confusion than it's worth.
  * We shall see...
  * @see
@@ -87,10 +87,7 @@ import type { LooseAutocomplete } from '../helpers/loose-autocomplete';
 export type LooseOmit<
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- unknown doesn't work here. Investigate.
   ObjectLike extends Record<PropertyKey, any>,
-  KeysUnion extends LooseAutocomplete<
-    keyof ObjectLike extends PropertyKey ? keyof ObjectLike : PropertyKey,
-    PropertyKey
-  >
+  KeysUnion extends LooseAutocomplete<keyof ObjectLike, PropertyKey>
 > = Omit<
   ObjectLike,
   KeysUnion extends PropertyKey ? KeysUnion : PropertyKey

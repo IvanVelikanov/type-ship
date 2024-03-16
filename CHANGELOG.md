@@ -2,6 +2,12 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.6.0 - 2024-03-16
+
+### Added
+
+- LoosePick type (looser version of StrictPick; opposite of LooseOmit).
+
 ## 0.5.0 - 2024-03-15
 
 ### Added

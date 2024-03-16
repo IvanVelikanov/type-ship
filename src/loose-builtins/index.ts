@@ -3,3 +3,4 @@
  */
 
 export * from './loose-omit';
+export * from './loose-pick';
