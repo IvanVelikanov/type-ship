@@ -2,6 +2,14 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.7.0 - 2024-03-17
+
+### Added
+
+- Replicate type.
+- ReplicateObject type.
+- ReturnObjectLikeOrNever type.
+
 ## 0.6.0 - 2024-03-16
 
 ### Added
