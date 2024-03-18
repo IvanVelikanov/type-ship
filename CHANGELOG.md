@@ -2,6 +2,12 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.7.1 - 2024-03-18
+
+### Fixed
+
+- Issue where Arrays could be passed to Strict and Loose varieties of Pick and Omit (Issue #2 in StrictPick and LoosePick; Issue #3 in StrictOmit and LooseOmit).
+
 ## 0.7.0 - 2024-03-17
 
 ### Added

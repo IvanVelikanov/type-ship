@@ -11,11 +11,13 @@ import type { EXPERIMENTAL_LooseOmit } from '../EXPERIMENTAL/EXPERIMENAL_loose-o
 
 import type { EmptyObject } from '../helpers/empty-object';
 import type { LooseAutocomplete } from '../helpers/loose-autocomplete';
+import type { ReturnObjectLikeOrNever } from '../helpers/return-object-like-or-never';
 
 /**
  * @summary Construct a type with the properties of `ObjectLike` except for those in type `KeysUnion`.
  * @template ObjectLike An object-like type or interface from which keys from `KeysUnion` are to be excluded.
  * @template KeysUnion A union of keys to be excluded from `ObjectLike`.
+ * @template ObjectLikeHelper An internal helper. DO NOT CHANGE.
  * @description Same logic as {@link Omit} (see {@link https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys built-in TS Omit})
  * but limited to object-like types and also provides loose autocomplete via {@link LooseAutocomplete}.
  *
@@ -70,7 +72,7 @@ import type { LooseAutocomplete } from '../helpers/loose-autocomplete';
  * **Issue #2:**
  * As of now, this type may not work correctly with Maps or Sets.
  *
- * **Issue #3:**
+ * **Issue #3 (FIXED in v0.7.1):**
  * Arrays can be passed into `ObjectLike` generic -- there's a rather simple way to change this and it needs to happen soon.
  *
  * **Issue 4:**
@@ -81,13 +83,13 @@ import type { LooseAutocomplete } from '../helpers/loose-autocomplete';
  * We shall see...
  * @see
  * Types used under the hood:
- * - Helpers: {@link LooseAutocomplete}, {@link EmptyObject};
+ * - Helpers: {@link LooseAutocomplete}, {@link EmptyObject}, {@link ReturnObjectLikeOrNever};
  * - Built-in TS Utilities: {@link Omit}, {@link PropertyKey}, {@link Record}.
  */
 export type LooseOmit<
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- unknown doesn't work here. Investigate.
-  ObjectLike extends Record<PropertyKey, any>,
-  KeysUnion extends LooseAutocomplete<keyof ObjectLike, PropertyKey>
+  ObjectLike extends ReturnObjectLikeOrNever<ObjectLikeHelper>,
+  KeysUnion extends LooseAutocomplete<keyof ObjectLike, PropertyKey>,
+  ObjectLikeHelper extends object = ReturnObjectLikeOrNever<ObjectLike>
 > = Omit<
   ObjectLike,
   KeysUnion extends PropertyKey ? KeysUnion : PropertyKey

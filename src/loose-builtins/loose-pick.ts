@@ -10,6 +10,7 @@ import type { EXPERIMENTAL_LooseOmit } from '../EXPERIMENTAL/EXPERIMENAL_loose-o
 
 import type { LooseAutocomplete } from '../helpers/loose-autocomplete';
 import type { EmptyObject } from '../helpers/empty-object';
+import type { ReturnObjectLikeOrNever } from '../helpers/return-object-like-or-never';
 
 /**
  * @description Helper type for the {@link LoosePick} utility type.
@@ -28,6 +29,7 @@ type LoosePickHelper<
  * @summary Construct a type with the properties of `ObjectLike` picked from those in type `KeysUnion`.
  * @template ObjectLike An object-like type or interface from which some keys are to be picked.
  * @template KeysUnion A union of keys that may or may not be present in the ObjectLike generic, used to pick keys from the created type.
+ * @template ObjectLikeHelper An internal helper. DO NOT CHANGE.
  * @description Very similar to TS's built-in {@link Pick} utility type (@see {@link https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys built-in TS Pick}) with 3 key differences:
  * - 1. The first generic is limited to object-like types;
  * - 2. In the second generic, the keys to be picked don't necessarily have to extend the keys of `ObjectLike` -- still, loose autocomplete is provided;
@@ -63,7 +65,7 @@ type LoosePickHelper<
  * **Issue #1:**
  * As of now, this type may not work correctly with Maps or Sets.
  *
- * **Issue #2:**
+ * **Issue #2 (FIXED in v0.7.1):**
  * Arrays can be passed into `ObjectLike` generic -- there's a rather simple way to change this and it needs to happen soon.
  *
  * **Issue 3:**
@@ -75,13 +77,13 @@ type LoosePickHelper<
  * @see
  * Types used under the hood:
  * - Internal: {@link LoosePickHelper};
- * - Helpers: {@link LooseAutocomplete}, {@link EmptyObject};
+ * - Helpers: {@link LooseAutocomplete}, {@link EmptyObject}, {@link ReturnObjectLikeOrNever};
  * - Built-in TS Utilities: {@link PropertyKey}, {@link Record}.
  */
 export type LoosePick<
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- unknown in the Record leads to some strange errors. Investigate it later!
-  ObjectLike extends Record<PropertyKey, any>,
-  KeysUnion extends LooseAutocomplete<keyof ObjectLike, PropertyKey>
+  ObjectLike extends ReturnObjectLikeOrNever<ObjectLikeHelper>,
+  KeysUnion extends LooseAutocomplete<keyof ObjectLike, PropertyKey>,
+  ObjectLikeHelper extends object = ReturnObjectLikeOrNever<ObjectLike>
 > = LoosePickHelper<
   ObjectLike,
   KeysUnion extends PropertyKey ? KeysUnion : PropertyKey

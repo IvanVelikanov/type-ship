@@ -9,11 +9,13 @@ import type { EXPERIMENTAL_LooseOmit } from '../EXPERIMENTAL/EXPERIMENAL_loose-o
 /* eslint-enable @typescript-eslint/no-unused-vars -- Types actually used for StrictOmit should come after this line. */
 
 import type { EmptyObject } from '../helpers/empty-object';
+import type { ReturnObjectLikeOrNever } from '../helpers/return-object-like-or-never';
 
 /**
  * @summary Construct a type with the properties of `ObjectLike` except for those in type `KeysUnion`.
  * @template ObjectLike An object-like type or interface from which keys from `KeysUnion` are to be excluded.
  * @template KeysUnion A union of keys that are present in the `ObjectLike` generic, used to exclude keys from the created type.
+ * @template ObjectLikeHelper An internal helper. DO NOT CHANGE.
  * @description A stricter version of TS's built-in {@link Omit} utility type.
  *
  * Opposite of {@link StrictPick}.
@@ -89,7 +91,7 @@ import type { EmptyObject } from '../helpers/empty-object';
  * **Issue #2:**
  * As of now, this type may not work correctly with Maps or Sets.
  *
- * **Issue #3:**
+ * **Issue #3 (FIXED in v0.7.1):**
  * Arrays can be passed into `ObjectLike` generic -- there's a rather simple way to change this and it needs to happen soon.
  * **Issue 4:**
  * No autocomplete for `KeysUnion` number and symbol keys -- only for strings.
@@ -99,13 +101,13 @@ import type { EmptyObject } from '../helpers/empty-object';
  * We shall see...
  * @see
  * Types used under the hood:
- * - Helpers: {@link EmptyObject};
+ * - Helpers: {@link EmptyObject}, {@link ReturnObjectLikeOrNever};
  * - Built-in TS Utilities: {@link Omit}, {@link PropertyKey}, {@link Record}.
  */
 export type StrictOmit<
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- unknown in the Record leads to some strange errors. Investigate it later!
-  ObjectLike extends Record<PropertyKey, any>,
-  KeysUnion extends keyof ObjectLike
+  ObjectLike extends ReturnObjectLikeOrNever<ObjectLikeHelper>,
+  KeysUnion extends keyof ObjectLike,
+  ObjectLikeHelper extends object = ReturnObjectLikeOrNever<ObjectLike>
 > = Omit<ObjectLike, KeysUnion> extends EmptyObject
   ? EmptyObject
   : Omit<ObjectLike, KeysUnion>;

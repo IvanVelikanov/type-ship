@@ -8,10 +8,13 @@ import type { LoosePick } from '../loose-builtins/loose-pick';
 import type { EXPERIMENTAL_LooseOmit } from '../EXPERIMENTAL/EXPERIMENAL_loose-omit';
 /* eslint-enable @typescript-eslint/no-unused-vars -- Types actually used for LoosePick should come after this line. */
 
+import type { ReturnObjectLikeOrNever } from '../helpers/return-object-like-or-never';
+
 /**
  * @summary Construct a type with the properties of `ObjectLike` picked from those in type `KeysUnion`.
  * @template ObjectLike An object-like type or interface from which some keys are to be picked.
  * @template KeysUnion A union of keys that are present in the ObjectLike generic, used to pick keys from the created type.
+ * @template ObjectLikeHelper An internal helper. DO NOT CHANGE.
  * @description A stricter version of TS's built-in {@link Pick} utility type.
  *
  * Opposite of {@link StrictOmit}.
@@ -66,7 +69,7 @@ import type { EXPERIMENTAL_LooseOmit } from '../EXPERIMENTAL/EXPERIMENAL_loose-o
  * **Issue #1:**
  * As of now, this type may not work correctly with Maps or Sets.
  *
- * **Issue #2:**
+ * **Issue #2 (FIXED in v0.7.1):**
  * Arrays can be passed into `ObjectLike` generic -- there's a rather simple way to change this and it needs to happen soon.
  *
  * **Issue 3:**
@@ -75,9 +78,12 @@ import type { EXPERIMENTAL_LooseOmit } from '../EXPERIMENTAL/EXPERIMENAL_loose-o
  * But there is a case to be made that types should be created for Omit and Pick types (both Loose and Strict varieties) that *ONLY* accept strings for object keys in the `KeysUnion`.
  * Using numbers as keys is plainly bad practice and using symbols is rare enough that using the wide {@link PropertyKey} type for keys in these utilities -- while strictly more "correct" -- will probably lead to more confusion than it's worth.
  * We shall see...
+ * @see
+ * Types used under the hood:
+ * - Helpers: {@link ReturnObjectLikeOrNever}.
  */
 export type StrictPick<
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- unknown in the Record leads to some strange errors. Investigate it later!
-  ObjectLike extends Record<PropertyKey, any>,
-  KeysUnion extends keyof ObjectLike
+  ObjectLike extends ReturnObjectLikeOrNever<ObjectLikeHelper>,
+  KeysUnion extends keyof ObjectLike,
+  ObjectLikeHelper extends object = ReturnObjectLikeOrNever<ObjectLike>
 > = Pick<ObjectLike, KeysUnion>;
