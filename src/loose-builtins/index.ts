@@ -4,3 +4,5 @@
 
 export * from './loose-omit';
 export * from './loose-pick';
+export * from './loose-exclude';
+export * from './loose-extract';

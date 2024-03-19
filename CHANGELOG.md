@@ -2,6 +2,13 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.8.0 - 2024-03-19
+
+### Added
+
+- LooseExclude type (looser version of StrictExclude; opposite of LooseExtract).
+- LooseExtract type (looser version of StrictExtract; opposite of LooseExclude).
+
 ## 0.7.1 - 2024-03-18
 
 ### Fixed
