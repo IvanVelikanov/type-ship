@@ -2,6 +2,17 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.9.0 - 2024-03-20
+
+### Added
+
+- TODOs.md to track planned change.
+- IsTrue type.
+- IsFalse type.
+- IsNever type.
+- IsAny type.
+- ExpectFalse type.
+
 ## 0.8.0 - 2024-03-19
 
 ### Added

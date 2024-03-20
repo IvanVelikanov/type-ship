@@ -1,6 +1,6 @@
 {
   "name": "type-ship",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "A library of battle-tested and experimental types",
   "main": "index.d.ts",
   "scripts": {

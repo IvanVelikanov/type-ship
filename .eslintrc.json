@@ -19,7 +19,7 @@
     "plugin:jsdoc/recommended-typescript-error"
   ],
 
-  "ignorePatterns": ["test", "EXPERIMENTAL"],
+  "ignorePatterns": ["test", "tests", "EXPERIMENTAL"],
 
   "parser": "@typescript-eslint/parser",
 
