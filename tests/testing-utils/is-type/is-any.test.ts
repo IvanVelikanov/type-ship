@@ -1,5 +1,6 @@
 import type { IsAny } from '../../../src/testing-utils/is-type/is-any';
 import type { ExpectFalse } from '../../../src/testing-utils/expect-type/expect-false';
+import type { ExpectTrue } from '../../../src/testing-utils/expect-type/expect-true';
 
 interface FooBarInterface {
   foo: any;
@@ -13,7 +14,7 @@ type FooBarType = {
   readonly bazz?: string;
 };
 
-type TestIsAny_Any = IsAny<any>;
+type TestIsAny_Any = ExpectTrue<IsAny<any>>;
 
 type TestIsAny_Never = ExpectFalse<IsAny<never>>;
 type TestIsAny_Unknown = ExpectFalse<IsAny<unknown>>;

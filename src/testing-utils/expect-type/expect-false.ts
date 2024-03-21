@@ -1,12 +1,12 @@
 /**
- * @file Returns true only if `false` is passed; false otherwise.
+ * @file Returns true only if `false` is passed; never otherwise.
  */
 
 import type { IsAny } from '../is-type/is-any';
-import type { IsNever } from '../is-type/is-never';
+import type { IsFalse } from '../is-type/is-false';
 
 /**
- * @description Returns `true` **only** if `false` is passed; raises an error and returns `false` otherwise.
+ * @description Returns `true` **only** if `false` is passed; raises an error and returns `never` otherwise.
  * @template TestedType Raises an error if anything other than `false` is passed into it...
  *
  * ... Unless it's `never` -- but we don't talk about it just yet.
@@ -26,12 +26,4 @@ import type { IsNever } from '../is-type/is-never';
  */
 export type ExpectFalse<
   TestedType extends IsAny<TestedType> extends true ? never : false
-> = IsAny<TestedType> extends true
-  ? false
-  : IsNever<TestedType> extends true
-  ? false
-  : true extends TestedType
-  ? false
-  : TestedType extends false
-  ? true
-  : false;
+> = IsFalse<TestedType> extends true ? true : never;

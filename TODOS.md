@@ -8,36 +8,100 @@ Once all planned types have been added and tested; and all issues have been reso
 
 ### Add
 
-- [ ] 1 Helpers
-  - [x] 1.1 EmptyObject
-  - [x] 1.2 LooseAutocomplete
-  - [x] 1.3 Replicate
-  - [x] 1.4 ReplicateObject
-  - [x] 1.5 ReturnObjectLikeOrNever
+- [ ] **1 Helpers**
+
+  - [ ] 1.1 EmptyObject
+    - [x] Implement (v0.1.0 - 2024-03-12)
+    - [ ] Document
+    - [ ] Test
+  - [ ] 1.2 LooseAutocomplete
+    - [x] Implement (v0.5.0 - 2024-03-15)
+    - [ ] Document
+    - [ ] Test
+  - [ ] 1.3 Replicate
+    - [x] Implement (v0.7.0 - 2024-03-17)
+    - [ ] Document
+    - [ ] Test
+  - [ ] 1.4 ReplicateObject
+    - [x] Implement (v0.7.0 - 2024-03-17)
+    - [ ] Document
+    - [ ] Test
+  - [ ] 1.5 ReturnObjectLikeOrNever
+    - [x] Implement (v0.7.0 - 2024-03-17)
+    - [ ] Document
+    - [ ] Test
   - [ ] 1.6 DeepReplicateObject
-- [x] 2 Strict Built-Ins
-  - [x] 2.1 StrictOmit
-  - [x] 2.2 StrictPick
-  - [x] 2.3 StrictExclude
-  - [x] 2.4 StrictExtract
-- [x] 3 Loose Built-Ins
-  - [x] 3.1 LooseOmit
-  - [x] 3.2 LoosePick
-  - [x] 3.3 LooseExclude
-  - [x] 3.4 LooseExtract
-- [ ] 4 Is-Types
+    - [ ] Implement
+    - [ ] Document
+    - [ ] Test
+
+- [ ] **2 Strict Built-Ins**
+
+  - [ ] 2.1 StrictOmit
+    - [x] Implement (v0.1.0 - 2024-03-12)
+    - [ ] Document
+    - [ ] Test
+  - [ ] 2.2 StrictPick
+    - [x] Implement (v0.4.0 - 2024-03-14)
+    - [ ] Document
+    - [ ] Test
+  - [ ] 2.3 StrictExclude
+    - [x] Implement (v0.2.0 - 2024-03-13)
+    - [ ] Document
+    - [ ] Test
+  - [ ] 2.4 StrictExtract
+    - [x] Implement (v0.3.0 - 2024-03-13)
+    - [ ] Document
+    - [ ] Test
+
+- [ ] **3 Loose Built-Ins**
+
+  - [ ] 3.1 LooseOmit
+    - [x] Implement (v0.5.0 - 2024-03-15)
+    - [ ] Document
+    - [ ] Test
+  - [ ] 3.2 LoosePick
+    - [x] Implement (v0.6.0 - 2024-03-16)
+    - [ ] Document
+    - [ ] Test
+  - [ ] 3.3 LooseExclude
+    - [x] Implement (v0.8.0 - 2024-03-19)
+    - [ ] Document
+    - [ ] Test
+  - [ ] 3.4 LooseExtract
+    - [x] Implement (v0.8.0 - 2024-03-19)
+    - [ ] Document
+    - [ ] Test
+
+- [ ] **4 Is-Types**
+
   - [ ] 4.1 IsTypeFactory
-  - [x] 4.2 IsAny
-  - [x] 4.3 IsNever
+  - [ ] 4.2 IsAny
+    - [x] Implement (v0.9.0 - 2024-03-20)
+    - [ ] Document
+    - [x] Test (v0.10.0 - 2024-03-21)
+  - [ ] 4.3 IsNever
+    - [x] Implement (v0.9.0 - 2024-03-20)
+    - [ ] Document
+    - [x] Test (v0.10.0 - 2024-03-21)
   - [ ] 4.4 IsUnknown
+    - [x] Implement (v0.10.0 - 2024-03-21)
+    - [ ] Document
+    - [x] Test (v0.10.0 - 2024-03-21)
   - [ ] 4.5 IsVoid
   - [ ] 4.6 IsNumber
   - [ ] 4.7 IsNumberLiteral
   - [ ] 4.8 IsString
   - [ ] 4.9 IsStringLiteral
   - [ ] 4.10 IsBoolean
-  - [x] 4.11 IsTrue
-  - [x] 4.12 IsFalse
+  - [ ] 4.11 IsTrue
+    - [x] Implement (v0.9.0 - 2024-03-20)
+    - [ ] Document
+    - [x] Test (v0.10.0 - 2024-03-21)
+  - [ ] 4.12 IsFalse
+    - [x] Implement (v0.9.0 - 2024-03-20)
+    - [ ] Document
+    - [x] Test (v0.10.0 - 2024-03-21)
   - [ ] 4.13 IsNull
   - [ ] 4.14 IsUndefined
   - [ ] 4.15 IsBigInt
@@ -51,7 +115,9 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 4.22 IsClass
   - [ ] 4.23 IsTruthy
   - [ ] 4.24 IsFalsey
-- [ ] 5 Is-Not-Types
+
+- [ ] **5 Is-Not-Types**
+
   - [ ] 5.1 IsNotTypeFactory
   - [ ] 5.2 IsNotAny
   - [ ] 5.3 IsNotNever
@@ -77,7 +143,9 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 5.22 IsNotClass
   - [ ] 5.23 IsNotTruthy
   - [ ] 5.24 IsNotFalsey
-- [ ] 6 Expect-Types
+
+- [ ] **6 Expect-Types**
+
   - [ ] 6.1 ExpectTypeFactory
   - [ ] 6.2 ExpectAny
   - [ ] 6.3 ExpectNever
@@ -89,7 +157,13 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 6.9 ExpectStringLiteral
   - [ ] 6.10 ExpectBoolean
   - [ ] 6.11 ExpectTrue
-  - [x] 6.12 ExpectFalse
+    - [x] Implement (v0.10.0 - 2024-03-21)
+    - [ ] Document
+    - [x] Test (v0.10.0 - 2024-03-21)
+  - [ ] 6.12 ExpectFalse
+    - [x] Implement (v0.9.0 - 2024-03-20)
+    - [ ] Document
+    - [x] Test (v0.9.0 - 2024-03-20)
   - [ ] 6.13 ExpectNull
   - [ ] 6.14 ExpectUndefined
   - [ ] 6.15 ExpectBigInt
@@ -103,7 +177,9 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 6.22 ExpectClass
   - [ ] 6.23 ExpectTruthy
   - [ ] 6.24 ExpectFalsey
-- [ ] 7 Expect-Not-Types
+
+- [ ] **7 Expect-Not-Types**
+
   - [ ] 7.1 ExpectNotTypeFactory
   - [ ] 7.2 ExpectNotAny
   - [ ] 7.3 ExpectNotNever
@@ -129,7 +205,9 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 7.22 ExpectNotClass
   - [ ] 7.23 ExpectNotTruthy
   - [ ] 7.24 ExpectNotFalsey
-- [ ] 8 Selective Built-Ins
+
+- [ ] **8 Selective Built-Ins**
+
   - [ ] 8.1 StrictSelectivePartial
   - [ ] 8.2 LooseSelectivePartial
   - [ ] 8.3 StrictSelectiveReadonly
@@ -138,7 +216,9 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 8.6 LooseSelectiveRequired
   - [ ] 8.7 StrictSelectiveMutable
   - [ ] 8.8 LooseSelectiveMutable
-- [ ] 9 Deep Built-Ins
+
+- [ ] **9 Deep Built-Ins**
+
   - [ ] 9.1 DeepReadonly
   - [ ] 9.2 DeepStrictSelectiveReadonly
   - [ ] 9.3 DeepLooseSelectiveReadonly
@@ -155,8 +235,12 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 9.14 DeepLooseOmit
   - [ ] 9.15 DeepStrictPick
   - [ ] 9.16 DeepLoosePick
-- [ ] 10 JSON
+
+- [ ] **10 JSON**
+
   - [ ] 10.1 Jsonifiable
-- [ ] X Others
+
+- [ ] **X Others**
+
   - [ ] X.1 Switcher
   - [ ] X.2 Obscure

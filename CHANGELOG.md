@@ -2,6 +2,26 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.10.0 - 2024-03-21
+
+### Added
+
+- ExpectTrue type.
+- IsUnknown type.
+
+### Tested
+
+- ExpectTrue type.
+- IsAny type.
+- IsFalse type.
+- IsNever type.
+- IsTrue type.
+- IsUnknown type.
+
+### Changed
+
+- Implementation of ExpectFalse type.
+
 ## 0.9.0 - 2024-03-20
 
 ### Added
@@ -11,6 +31,10 @@ All notable changes to the project shall be documented here.
 - IsFalse type.
 - IsNever type.
 - IsAny type.
+- ExpectFalse type.
+
+### Tested
+
 - ExpectFalse type.
 
 ## 0.8.0 - 2024-03-19

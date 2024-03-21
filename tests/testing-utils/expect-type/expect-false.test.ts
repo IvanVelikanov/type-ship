@@ -20,7 +20,7 @@ type ExpectFalse_True = ExpectFalse<true>;
 type ExpectFalse_Boolean = ExpectFalse<boolean>;
 // @ts-expect-error
 type ExpectFalse_Any = ExpectFalse<any>;
-// @ts-expect-error
+// @ts-expect-error: Seems like there isn't a way to make this test pass due to the nature of `never`.
 export type ExpectFalse_Never = ExpectFalse<never>;
 // @ts-expect-error
 type ExpectFalse_Unknown = ExpectFalse<unknown>;
