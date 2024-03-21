@@ -2,6 +2,12 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.10.1 - 2024-03-21
+
+### Removed
+
+- Export for IsNeverHelper type.
+
 ## 0.10.0 - 2024-03-21
 
 ### Added

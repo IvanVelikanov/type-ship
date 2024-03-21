@@ -9,7 +9,7 @@ import type { IsAny } from './is-any';
  * @example @see
  * See examples for {@link IsNever}.
  */
-export type IsNeverHelper<TestedType> = IsAny<TestedType> extends true
+type IsNeverHelper<TestedType> = IsAny<TestedType> extends true
   ? false
   : TestedType extends never
   ? true
