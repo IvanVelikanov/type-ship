@@ -1,6 +1,6 @@
 {
   "name": "type-ship",
-  "version": "0.10.1",
+  "version": "0.11.0",
   "description": "A library of battle-tested and experimental types",
   "main": "index.d.ts",
   "scripts": {
@@ -31,6 +31,6 @@
     "eslint-plugin-jsdoc": "^48.2.1",
     "eslint-plugin-sonarjs": "^0.24.0",
     "eslint-plugin-unicorn": "^51.0.1",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.3"
   }
 }

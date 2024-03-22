@@ -4,3 +4,6 @@
 
 export * from './expect-false';
 export * from './expect-true';
+export * from './expect-never';
+export * from './expect-any';
+export * from './expect-unknown';

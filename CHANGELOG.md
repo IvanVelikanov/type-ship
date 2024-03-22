@@ -2,6 +2,20 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.11.0 - 2024-03-22
+
+### Added
+
+- ExpectNever type.
+- ExpectAny type.
+- ExpectUnknown type.
+
+### Tested
+
+- ExpectNever type.
+- ExpectAny type.
+- ExpectUnknown type.
+
 ## 0.10.1 - 2024-03-21
 
 ### Removed

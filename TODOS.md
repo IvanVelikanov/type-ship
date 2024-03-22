@@ -148,8 +148,17 @@ Once all planned types have been added and tested; and all issues have been reso
 
   - [ ] 6.1 ExpectTypeFactory
   - [ ] 6.2 ExpectAny
+    - [x] Implement (v0.11.0 - 2024-03-22)
+    - [ ] Document
+    - [x] Test (v0.11.0 - 2024-03-22)
   - [ ] 6.3 ExpectNever
+    - [x] Implement (v0.11.0 - 2024-03-22)
+    - [ ] Document
+    - [x] Test (v0.11.0 - 2024-03-22)
   - [ ] 6.4 ExpectUnknown
+    - [x] Implement (v0.11.0 - 2024-03-22)
+    - [ ] Document
+    - [x] Test (v0.11.0 - 2024-03-22)
   - [ ] 6.5 ExpectVoid
   - [ ] 6.6 ExpectNumber
   - [ ] 6.7 ExpectNumberLiteral
