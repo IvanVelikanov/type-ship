@@ -2,6 +2,26 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.12.0 - 2024-03-23
+
+### Added
+
+- IsBoolean type.
+- ExpectBoolean type.
+- IsBooleanBroad type.
+- ExpectBooleanBroad type.
+- IsBooleanLiteral type.
+- ExpectBooleanLiteral type.
+
+### Tested
+
+- IsBoolean type.
+- ExpectBoolean type.
+- IsBooleanBroad type.
+- ExpectBooleanBroad type.
+- IsBooleanLiteral type.
+- ExpectBooleanLiteral type.
+
 ## 0.11.0 - 2024-03-22
 
 ### Added

@@ -94,6 +94,9 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 4.8 IsString
   - [ ] 4.9 IsStringLiteral
   - [ ] 4.10 IsBoolean
+    - [x] Implement (v0.12.0 - 2024-03-23)
+    - [ ] Document
+    - [x] Test (v0.12.0 - 2024-03-23)
   - [ ] 4.11 IsTrue
     - [x] Implement (v0.9.0 - 2024-03-20)
     - [ ] Document
@@ -115,6 +118,17 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 4.22 IsClass
   - [ ] 4.23 IsTruthy
   - [ ] 4.24 IsFalsey
+  - [ ] 4.25 IsBooleanBroad
+    - [x] Implement (v0.12.0 - 2024-03-23)
+    - [ ] Document
+    - [x] Test (v0.12.0 - 2024-03-23)
+  - [ ] 4.26 IsBooleanLiteral
+    - [x] Implement (v0.12.0 - 2024-03-23)
+    - [ ] Document
+    - [x] Test (v0.12.0 - 2024-03-23)
+  - [ ] 4.27 IsTuple
+  - [ ] 4.28 IsSymbol
+  - [ ] 4.29 IsTypedArray
 
 - [ ] **5 Is-Not-Types**
 
@@ -143,6 +157,11 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 5.22 IsNotClass
   - [ ] 5.23 IsNotTruthy
   - [ ] 5.24 IsNotFalsey
+  - [ ] 5.25 IsNotBooleanBroad
+  - [ ] 5.26 IsNotBooleanLiteral
+  - [ ] 5.27 IsNotTuple
+  - [ ] 5.28 IsNotSymbol
+  - [ ] 5.29 IsNotTypedArray
 
 - [ ] **6 Expect-Types**
 
@@ -165,6 +184,9 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 6.8 ExpectString
   - [ ] 6.9 ExpectStringLiteral
   - [ ] 6.10 ExpectBoolean
+    - [x] Implement (v0.12.0 - 2024-03-23)
+    - [ ] Document
+    - [x] Test (v0.12.0 - 2024-03-23)
   - [ ] 6.11 ExpectTrue
     - [x] Implement (v0.10.0 - 2024-03-21)
     - [ ] Document
@@ -186,6 +208,17 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 6.22 ExpectClass
   - [ ] 6.23 ExpectTruthy
   - [ ] 6.24 ExpectFalsey
+  - [ ] 6.25 ExpectBooleanBroad
+    - [x] Implement (v0.12.0 - 2024-03-23)
+    - [ ] Document
+    - [x] Test (v0.12.0 - 2024-03-23)
+  - [ ] 6.26 ExpectBooleanLiteral
+    - [x] Implement (v0.12.0 - 2024-03-23)
+    - [ ] Document
+    - [x] Test (v0.12.0 - 2024-03-23)
+  - [ ] 6.27 ExpectTuple
+  - [ ] 6.28 ExpectSymbol
+  - [ ] 6.29 ExpectTypedArray
 
 - [ ] **7 Expect-Not-Types**
 
@@ -214,6 +247,11 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 7.22 ExpectNotClass
   - [ ] 7.23 ExpectNotTruthy
   - [ ] 7.24 ExpectNotFalsey
+  - [ ] 7.25 ExpectNotBooleanBroad
+  - [ ] 7.26 ExpectNotBooleanLiteral
+  - [ ] 7.27 ExpectNotTuple
+  - [ ] 7.28 ExpectNotSymbol
+  - [ ] 7.29 ExpectNotTypedArray
 
 - [ ] **8 Selective Built-Ins**
 

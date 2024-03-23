@@ -4,6 +4,9 @@
 
 export * from './is-any';
 export * from './is-never';
+export * from './is-unknown';
+
 export * from './is-true';
 export * from './is-false';
-export * from './is-unknown';
+export * from './is-boolean';
+export * from './is-boolean-broad';
