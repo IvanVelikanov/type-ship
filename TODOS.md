@@ -34,6 +34,9 @@ Once all planned types have been added and tested; and all issues have been reso
     - [ ] Implement
     - [ ] Document
     - [ ] Test
+  - [ ] 1.7 Primitives
+  - [ ] 1.8 TypeOfValues
+  - [ ] 1.9 Falsey
 
 - [ ] **2 Strict Built-Ins**
 
@@ -129,6 +132,10 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 4.27 IsTuple
   - [ ] 4.28 IsSymbol
   - [ ] 4.29 IsTypedArray
+  - [ ] 4.30 IsAnyOrNeverOrUnknown
+    - [x] Implement (v0.13.0 - 2024-03-24)
+    - [ ] Document
+    - [x] Test (v0.13.0 - 2024-03-24)
 
 - [ ] **5 Is-Not-Types**
 
@@ -162,6 +169,7 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 5.27 IsNotTuple
   - [ ] 5.28 IsNotSymbol
   - [ ] 5.29 IsNotTypedArray
+  - [ ] 5.30 IsNotAnyOrNeverOrUnknown
 
 - [ ] **6 Expect-Types**
 
@@ -219,6 +227,10 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 6.27 ExpectTuple
   - [ ] 6.28 ExpectSymbol
   - [ ] 6.29 ExpectTypedArray
+  - [ ] 6.30 ExpectAnyOrNeverOrUnknown
+    - [x] Implement (v0.13.0 - 2024-03-24)
+    - [ ] Document
+    - [x] Test (v0.13.0 - 2024-03-24)
 
 - [ ] **7 Expect-Not-Types**
 
@@ -252,6 +264,7 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 7.27 ExpectNotTuple
   - [ ] 7.28 ExpectNotSymbol
   - [ ] 7.29 ExpectNotTypedArray
+  - [ ] 7.30 ExpectNotAnyOrNeverOrUnknown
 
 - [ ] **8 Selective Built-Ins**
 

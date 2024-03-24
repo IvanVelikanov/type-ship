@@ -2,6 +2,18 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.13.0 - 2024-03-24
+
+### Added
+
+- IsAnyOrNeverOrUnknown type.
+- ExpectAnyOrNeverOrUnknown type.
+
+### Tested
+
+- IsAnyOrNeverOrUnknown type.
+- ExpectAnyOrNeverOrUnknown type.
+
 ## 0.12.0 - 2024-03-23
 
 ### Added
