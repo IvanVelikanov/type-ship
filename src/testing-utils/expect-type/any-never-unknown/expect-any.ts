@@ -14,11 +14,11 @@ import type { IsAny } from '../../is-type/any-never-unknown/is-any';
  * type ExpectAny_Any = ExpectAny<any>; // true
  *
  * // TS errors out on everything below:
- * type ExpectAny_Boolean = ExpectAny<boolean>; // false
- * type ExpectAny_Never = ExpectAny<never>; // false
- * type ExpectAny_Unknown = ExpectAny<unknown>; // false
- * type ExpectAny_String = ExpectAny<string>; // false
- * type ExpectAny_Number = ExpectAny<number>; // false
+ * type ExpectAny_Boolean = ExpectAny<boolean>; // never
+ * type ExpectAny_Never = ExpectAny<never>; // never
+ * type ExpectAny_Unknown = ExpectAny<unknown>; // never
+ * type ExpectAny_String = ExpectAny<string>; // never
+ * type ExpectAny_Number = ExpectAny<number>; // never
  * ```
  */
 export type ExpectAny<

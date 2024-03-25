@@ -14,7 +14,7 @@ import type { IsBooleanBroad } from '../../is-type/booleans/is-boolean-broad';
  * - `boolean`;
  * - `true | false`;
  *
- * Returns `false` otherwise.
+ * Raises an error and returns `never` otherwise.
  * @template TestedType Raises an error if anything other than `boolean` OR `true | false` is passed into it...
  *
  * ... Unless it's `never` -- but we don't talk about it just yet.
@@ -24,14 +24,14 @@ import type { IsBooleanBroad } from '../../is-type/booleans/is-boolean-broad';
  * type ExpectBooleanBroad_TrueOrFalse = ExpectBooleanBroad<true | false> // true
  *
  * // TS errors out on everything below:
- * type ExpectBooleanBroad_True = ExpectBooleanBroad<true>; // false
- * type ExpectBooleanBroad_False = ExpectBooleanBroad<false>; // false
+ * type ExpectBooleanBroad_True = ExpectBooleanBroad<true>; // never
+ * type ExpectBooleanBroad_False = ExpectBooleanBroad<false>; // never
  *
- * type ExpectBooleanBroad_Any = ExpectBooleanBroad<any>; // false
- * type ExpectBooleanBroad_Never = ExpectBooleanBroad<never>; // false
- * type ExpectBooleanBroad_Unknown = ExpectBooleanBroad<unknown>; // false
- * type ExpectBooleanBroad_String = ExpectBooleanBroad<string>; // false
- * type ExpectBooleanBroad_Number = ExpectBooleanBroad<number>; // false
+ * type ExpectBooleanBroad_Any = ExpectBooleanBroad<any>; // never
+ * type ExpectBooleanBroad_Never = ExpectBooleanBroad<never>; // never
+ * type ExpectBooleanBroad_Unknown = ExpectBooleanBroad<unknown>; // never
+ * type ExpectBooleanBroad_String = ExpectBooleanBroad<string>; // never
+ * type ExpectBooleanBroad_Number = ExpectBooleanBroad<number>; // never
  * ```
  */
 export type ExpectBooleanBroad<

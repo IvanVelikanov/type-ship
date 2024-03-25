@@ -37,6 +37,7 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 1.7 Primitives
   - [ ] 1.8 TypeOfValues
   - [ ] 1.9 Falsey
+  - [ ] 1.10 Nullish
 
 - [ ] **2 Strict Built-Ins**
 
@@ -136,13 +137,23 @@ Once all planned types have been added and tested; and all issues have been reso
     - [x] Implement (v0.13.0 - 2024-03-24)
     - [ ] Document
     - [x] Test (v0.13.0 - 2024-03-24)
+  - [ ] 4.31 IsNullish
 
 - [ ] **5 Is-Not-Types**
 
   - [ ] 5.1 IsNotTypeFactory
   - [ ] 5.2 IsNotAny
+    - [x] Implement (v0.14.0 - 2024-03-25)
+    - [ ] Document
+    - [x] Test (v0.14.0 - 2024-03-25)
   - [ ] 5.3 IsNotNever
+    - [x] Implement (v0.14.0 - 2024-03-25)
+    - [ ] Document
+    - [x] Test (v0.14.0 - 2024-03-25)
   - [ ] 5.4 IsNotUnknown
+    - [x] Implement (v0.14.0 - 2024-03-25)
+    - [ ] Document
+    - [x] Test (v0.14.0 - 2024-03-25)
   - [ ] 5.5 IsNotVoid
   - [ ] 5.6 IsNotNumber
   - [ ] 5.7 IsNotNumberLiteral
@@ -170,6 +181,10 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 5.28 IsNotSymbol
   - [ ] 5.29 IsNotTypedArray
   - [ ] 5.30 IsNotAnyOrNeverOrUnknown
+    - [x] Implement (v0.14.0 - 2024-03-25)
+    - [ ] Document
+    - [x] Test (v0.14.0 - 2024-03-25)
+  - [ ] 5.31 IsNotNullish
 
 - [ ] **6 Expect-Types**
 
@@ -231,13 +246,23 @@ Once all planned types have been added and tested; and all issues have been reso
     - [x] Implement (v0.13.0 - 2024-03-24)
     - [ ] Document
     - [x] Test (v0.13.0 - 2024-03-24)
+  - [ ] 6.31 ExpectNullish
 
 - [ ] **7 Expect-Not-Types**
 
   - [ ] 7.1 ExpectNotTypeFactory
   - [ ] 7.2 ExpectNotAny
+    - [x] Implement (v0.14.0 - 2024-03-25)
+    - [ ] Document
+    - [x] Test (v0.14.0 - 2024-03-25)
   - [ ] 7.3 ExpectNotNever
+    - [x] Implement (v0.14.0 - 2024-03-25)
+    - [ ] Document
+    - [x] Test (v0.14.0 - 2024-03-25)
   - [ ] 7.4 ExpectNotUnknown
+    - [x] Implement (v0.14.0 - 2024-03-25)
+    - [ ] Document
+    - [x] Test (v0.14.0 - 2024-03-25)
   - [ ] 7.5 ExpectNotVoid
   - [ ] 7.6 ExpectNotNumber
   - [ ] 7.7 ExpectNotNumberLiteral
@@ -265,6 +290,10 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 7.28 ExpectNotSymbol
   - [ ] 7.29 ExpectNotTypedArray
   - [ ] 7.30 ExpectNotAnyOrNeverOrUnknown
+    - [x] Implement (v0.14.0 - 2024-03-25)
+    - [ ] Document
+    - [x] Test (v0.14.0 - 2024-03-25)
+  - [ ] 7.31 ExpectNotNullish
 
 - [ ] **8 Selective Built-Ins**
 

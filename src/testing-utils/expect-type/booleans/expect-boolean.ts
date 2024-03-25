@@ -15,7 +15,7 @@ import type { IsBoolean } from '../../is-type/booleans/is-boolean';
  * - `true`;
  * - `false`.
  *
- * Returns `false` otherwise.
+ * Raises an error and returns `never` otherwise.
  * @template TestedType Raises an error if anything other than `true`, `false`, `true | false` or `boolean` is passed into it...
  *
  * ... Unless it's `never` -- but we don't talk about it just yet.
@@ -27,11 +27,11 @@ import type { IsBoolean } from '../../is-type/booleans/is-boolean';
  * type ExpectBoolean_False = ExpectBoolean<false>; // true
  *
  * // TS errors out on everything below:
- * type ExpectBoolean_Any = ExpectBoolean<any>; // false
- * type ExpectBoolean_Never = ExpectBoolean<never>; // false
- * type ExpectBoolean_Unknown = ExpectBoolean<unknown>; // false
- * type ExpectBoolean_String = ExpectBoolean<string>; // false
- * type ExpectBoolean_Number = ExpectBoolean<number>; // false
+ * type ExpectBoolean_Any = ExpectBoolean<any>; // never
+ * type ExpectBoolean_Never = ExpectBoolean<never>; // never
+ * type ExpectBoolean_Unknown = ExpectBoolean<unknown>; // never
+ * type ExpectBoolean_String = ExpectBoolean<string>; // never
+ * type ExpectBoolean_Number = ExpectBoolean<number>; // never
  * ```
  */
 export type ExpectBoolean<

@@ -11,14 +11,14 @@ import type { IsUnknown } from '../../is-type/any-never-unknown/is-unknown';
  * ... Unless it's `never` -- but we don't talk about it just yet.
  * @example
  * ```
- * type ExpectUnknown_Unknown = ExpectUnknown<unknown>; // false
+ * type ExpectUnknown_Unknown = ExpectUnknown<unknown>; // true
  *
  * // TS errors out on everything below:
- * type ExpectUnknown_Boolean = ExpectUnknown<boolean>; // false
- * type ExpectUnknown_Any = ExpectUnknown<any>; // false
- * type ExpectUnknown_Never = ExpectUnknown<never>; // false
- * type ExpectUnknown_String = ExpectUnknown<string>; // false
- * type ExpectUnknown_Number = ExpectUnknown<number>; // false
+ * type ExpectUnknown_Boolean = ExpectUnknown<boolean>; // never
+ * type ExpectUnknown_Any = ExpectUnknown<any>; // never
+ * type ExpectUnknown_Never = ExpectUnknown<never>; // never
+ * type ExpectUnknown_String = ExpectUnknown<string>; // never
+ * type ExpectUnknown_Number = ExpectUnknown<number>; // never
  * ```
  */
 export type ExpectUnknown<

@@ -2,6 +2,34 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.14.0 - 2024-03-25
+
+### Added
+
+- IsNotAny type.
+- ExpectNotAny type.
+- IsNotNever type.
+- ExpectNotNever type.
+- IsNotUnknown type.
+- ExpectNotUnknown type.
+- IsNotAnyOrNeverOrUnknown type.
+- ExpectNotAnyOrNeverOrUnknown type.
+
+### Tested
+
+- IsNotAny type.
+- ExpectNotAny type.
+- IsNotNever type.
+- ExpectNotNever type.
+- IsNotUnknown type.
+- ExpectNotUnknown type.
+- IsNotAnyOrNeverOrUnknown type.
+- ExpectNotAnyOrNeverOrUnknown type.
+
+### Fixed
+
+- Some errors in JSDoc descriptions for IsType and ExpectType types.
+
 ## 0.13.0 - 2024-03-24
 
 ### Added

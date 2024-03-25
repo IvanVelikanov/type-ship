@@ -12,11 +12,11 @@ import type { IsNever } from '../../is-type/any-never-unknown/is-never';
  * type ExpectNever_Never = ExpectNever<never>; // true
  *
  * // TS errors out on everything below:
- * type ExpectNever_Boolean = ExpectNever<boolean>; // false
- * type ExpectNever_Any = ExpectNever<any>; // false
- * type ExpectNever_Unknown = ExpectNever<unknown>; // false
- * type ExpectNever_String = ExpectNever<string>; // false
- * type ExpectNever_Number = ExpectNever<number>; // false
+ * type ExpectNever_Boolean = ExpectNever<boolean>; // never
+ * type ExpectNever_Any = ExpectNever<any>; // never
+ * type ExpectNever_Unknown = ExpectNever<unknown>; // never
+ * type ExpectNever_String = ExpectNever<string>; // never
+ * type ExpectNever_Number = ExpectNever<number>; // never
  * ```
  */
 export type ExpectNever<TestedType extends never> =

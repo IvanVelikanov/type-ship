@@ -14,9 +14,9 @@ import type { IsAnyOrNeverOrUnknown } from '../../is-type/any-never-unknown/is-a
  * type ExpectAnyOrNeverOrUnknown_Unknown = ExpectAnyOrNeverOrUnknown<unknown>; // true
  *
  * // TS errors out on everything below:
- * type ExpectAnyOrNeverOrUnknown_Boolean = ExpectAnyOrNeverOrUnknown<boolean>; // false
- * type ExpectAnyOrNeverOrUnknown_String = ExpectAnyOrNeverOrUnknown<string>; // false
- * type ExpectAnyOrNeverOrUnknown_Number = ExpectAnyOrNeverOrUnknown<number>; // false
+ * type ExpectAnyOrNeverOrUnknown_Boolean = ExpectAnyOrNeverOrUnknown<boolean>; // never
+ * type ExpectAnyOrNeverOrUnknown_String = ExpectAnyOrNeverOrUnknown<string>; // never
+ * type ExpectAnyOrNeverOrUnknown_Number = ExpectAnyOrNeverOrUnknown<number>; // never
  * ```
  */
 export type ExpectAnyOrNeverOrUnknown<
