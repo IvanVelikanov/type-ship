@@ -295,39 +295,124 @@ Once all planned types have been added and tested; and all issues have been reso
     - [x] Test (v0.14.0 - 2024-03-25)
   - [ ] 7.31 ExpectNotNullish
 
-- [ ] **8 Selective Built-Ins**
+- [ ] **8 If-Types**
 
-  - [ ] 8.1 StrictSelectivePartial
-  - [ ] 8.2 LooseSelectivePartial
-  - [ ] 8.3 StrictSelectiveReadonly
-  - [ ] 8.4 LooseSelectiveReadonly
-  - [ ] 8.5 StrictSelectiveRequired
-  - [ ] 8.6 LooseSelectiveRequired
-  - [ ] 8.7 StrictSelectiveMutable
-  - [ ] 8.8 LooseSelectiveMutable
+  - [ ] 8.1 IfTypeFactory
+    - [x] Implement (v0.15.0 - 2024-03-26)
+    - [ ] Document
+    - [x] Test (v0.15.0 - 2024-03-26)
+  - [ ] 8.2 IfAny
+    - [x] Implement (v0.15.0 - 2024-03-26)
+    - [ ] Document
+    - [x] Test (v0.15.0 - 2024-03-26)
+  - [ ] 8.3 IfNever
+    - [x] Implement (v0.15.0 - 2024-03-26)
+    - [ ] Document
+    - [x] Test (v0.15.0 - 2024-03-26)
+  - [ ] 8.4 IfUnknown
+    - [x] Implement (v0.15.0 - 2024-03-26)
+    - [ ] Document
+    - [x] Test (v0.15.0 - 2024-03-26)
+  - [ ] 8.5 IfVoid
+  - [ ] 8.6 IfNumber
+  - [ ] 8.7 IfNumberLiteral
+  - [ ] 8.8 IfString
+  - [ ] 8.9 IfStringLiteral
+  - [ ] 8.10 IfBoolean
+  - [ ] 8.11 IfTrue
+  - [ ] 8.12 IfFalse
+  - [ ] 8.13 IfNull
+  - [ ] 8.14 IfUndefined
+  - [ ] 8.15 IfBigInt
+  - [ ] 8.16 IfBigIntLiteral
+  - [ ] 8.17 IfReadonlyArray
+  - [ ] 8.18 IfMutableArray
+  - [ ] 8.18 IfArray
+  - [ ] 8.19 IfObject
+  - [ ] 8.20 IfObjectLike
+  - [ ] 8.21 IfFunction
+  - [ ] 8.22 IfClass
+  - [ ] 8.23 IfTruthy
+  - [ ] 8.24 IfFalsey
+  - [ ] 8.25 IfBooleanBroad
+  - [ ] 8.26 IfBooleanLiteral
+  - [ ] 8.27 IfTuple
+  - [ ] 8.28 IfSymbol
+  - [ ] 8.29 IfTypedArray
+  - [ ] 8.30 IfAnyOrNeverOrUnknown
+    - [x] Implement (v0.15.0 - 2024-03-26)
+    - [ ] Document
+    - [x] Test (v0.15.0 - 2024-03-26)
+  - [ ] 8.31 IfNullish
 
-- [ ] **9 Deep Built-Ins**
+- [ ] **9 If-Not-Types**
 
-  - [ ] 9.1 DeepReadonly
-  - [ ] 9.2 DeepStrictSelectiveReadonly
-  - [ ] 9.3 DeepLooseSelectiveReadonly
-  - [ ] 9.4 DeepMutable
-  - [ ] 9.5 DeepLooseSelectiveMutable
-  - [ ] 9.6 DeepStrictSelectiveMutable
-  - [ ] 9.7 DeepPartial
-  - [ ] 9.8 DeepStrictSelectivePartial
-  - [ ] 9.9 DeepLooseSelectivePartial
-  - [ ] 9.10 DeepRequired
-  - [ ] 9.11 DeepStrictSelectiveRequired
-  - [ ] 9.12 DeepLooseSelectiveRequired
-  - [ ] 9.13 DeepStrictOmit
-  - [ ] 9.14 DeepLooseOmit
-  - [ ] 9.15 DeepStrictPick
-  - [ ] 9.16 DeepLoosePick
+  - [ ] 9.1 IfNotTypeFactory
+  - [ ] 9.2 IfNotAny
+  - [ ] 9.3 IfNotNever
+  - [ ] 9.4 IfNotUnknown
+  - [ ] 9.5 IfNotVoid
+  - [ ] 9.6 IfNotNumber
+  - [ ] 9.7 IfNotNumberLiteral
+  - [ ] 9.8 IfNotString
+  - [ ] 9.9 IfNotStringLiteral
+  - [ ] 9.10 IfNotBoolean
+  - [ ] 9.11 IfNotTrue
+  - [ ] 9.12 IfNotFalse
+  - [ ] 9.13 IfNotNull
+  - [ ] 9.14 IfNotUndefined
+  - [ ] 9.15 IfNotBigInt
+  - [ ] 9.16 IfNotBigIntLiteral
+  - [ ] 9.17 IfNotReadonlyArray
+  - [ ] 9.18 IfNotMutableArray
+  - [ ] 9.18 IfNotArray
+  - [ ] 9.19 IfNotObject
+  - [ ] 9.20 IfNotObjectLike
+  - [ ] 9.21 IfNotFunction
+  - [ ] 9.22 IfNotClass
+  - [ ] 9.23 IfNotTruthy
+  - [ ] 9.24 IfNotFalsey
+  - [ ] 9.25 IfNotBooleanBroad
+  - [ ] 9.26 IfNotBooleanLiteral
+  - [ ] 9.27 IfNotTuple
+  - [ ] 9.28 IfNotSymbol
+  - [ ] 9.29 IfNotTypedArray
+  - [ ] 9.30 IfNotAnyOrNeverOrUnknown
+  - [ ] 9.31 IfNotNullish
 
-- [ ] **10 JSON**
+- [ ] **10 Selective Built-Ins**
 
-  - [ ] 10.1 Jsonifiable
+  - [ ] 10.1 StrictSelectivePartial
+  - [ ] 10.2 LooseSelectivePartial
+  - [ ] 10.3 StrictSelectiveReadonly
+  - [ ] 10.4 LooseSelectiveReadonly
+  - [ ] 10.5 StrictSelectiveRequired
+  - [ ] 10.6 LooseSelectiveRequired
+  - [ ] 10.7 StrictSelectiveMutable
+  - [ ] 10.8 LooseSelectiveMutable
+
+- [ ] **11 Deep Built-Ins**
+
+  - [ ] 11.1 DeepReadonly
+  - [ ] 11.2 DeepStrictSelectiveReadonly
+  - [ ] 11.3 DeepLooseSelectiveReadonly
+  - [ ] 11.4 DeepMutable
+  - [ ] 11.5 DeepLooseSelectiveMutable
+  - [ ] 11.6 DeepStrictSelectiveMutable
+  - [ ] 11.7 DeepPartial
+  - [ ] 11.8 DeepStrictSelectivePartial
+  - [ ] 11.9 DeepLooseSelectivePartial
+  - [ ] 11.10 DeepRequired
+  - [ ] 11.11 DeepStrictSelectiveRequired
+  - [ ] 11.12 DeepLooseSelectiveRequired
+  - [ ] 11.13 DeepStrictOmit
+  - [ ] 11.14 DeepLooseOmit
+  - [ ] 11.15 DeepStrictPick
+  - [ ] 11.16 DeepLoosePick
+
+- [ ] **12 JSON**
+
+  - [ ] 12.1 Jsonifiable
 
 - [ ] **X Others**
 

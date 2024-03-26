@@ -1,6 +1,6 @@
 {
   "name": "type-ship",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "A library of battle-tested and experimental types",
   "main": "index.d.ts",
   "scripts": {
@@ -12,8 +12,10 @@
   },
   "keywords": [
     "ts",
+    "typescript",
     "types",
-    "utilities"
+    "utilities",
+    "testing"
   ],
   "author": "Ivan Velikanov",
   "license": "MIT",
@@ -22,8 +24,8 @@
   },
   "homepage": "https://github.com/IvanVelikanov/type-ship#readme",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.3.1",
-    "@typescript-eslint/parser": "^7.3.1",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
     "eslint": "^8.57.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-eslint-comments": "^3.2.0",

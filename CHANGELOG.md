@@ -2,6 +2,16 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.15.0 - 2024-03-26
+
+### Added
+
+- If type.
+- IfAny type.
+- IfNever type.
+- IfUnknown type.
+- IfAnyOrNeverOrUnknown type.
+
 ## 0.14.0 - 2024-03-25
 
 ### Added
@@ -101,6 +111,19 @@ All notable changes to the project shall be documented here.
 ### Changed
 
 - Implementation of ExpectFalse type.
+
+## 0.9.1 - 2024-03-20
+
+### Added
+
+- TODOs.md to track planned change.
+- IsTrue type.
+- IsFalse type.
+- IsNever type.
+- IsAny type.
+- ExpectFalse type.
+
+### Tested
 
 ## 0.9.0 - 2024-03-20
 
