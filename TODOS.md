@@ -300,19 +300,19 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 8.1 IfTypeFactory
     - [x] Implement (v0.15.0 - 2024-03-26)
     - [ ] Document
-    - [x] Test (v0.15.0 - 2024-03-26)
+    - [ ] Test
   - [ ] 8.2 IfAny
     - [x] Implement (v0.15.0 - 2024-03-26)
     - [ ] Document
-    - [x] Test (v0.15.0 - 2024-03-26)
+    - [ ] Test
   - [ ] 8.3 IfNever
     - [x] Implement (v0.15.0 - 2024-03-26)
     - [ ] Document
-    - [x] Test (v0.15.0 - 2024-03-26)
+    - [ ] Test
   - [ ] 8.4 IfUnknown
     - [x] Implement (v0.15.0 - 2024-03-26)
     - [ ] Document
-    - [x] Test (v0.15.0 - 2024-03-26)
+    - [ ] Test
   - [ ] 8.5 IfVoid
   - [ ] 8.6 IfNumber
   - [ ] 8.7 IfNumberLiteral
@@ -342,15 +342,27 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 8.30 IfAnyOrNeverOrUnknown
     - [x] Implement (v0.15.0 - 2024-03-26)
     - [ ] Document
-    - [x] Test (v0.15.0 - 2024-03-26)
+    - [ ] Test
   - [ ] 8.31 IfNullish
 
 - [ ] **9 If-Not-Types**
 
   - [ ] 9.1 IfNotTypeFactory
+    - [x] Implement (v0.16.0 - 2024-03-27)
+    - [ ] Document
+    - [ ] Test
   - [ ] 9.2 IfNotAny
+    - [x] Implement (v0.16.0 - 2024-03-27)
+    - [ ] Document
+    - [ ] Test
   - [ ] 9.3 IfNotNever
+    - [x] Implement (v0.16.0 - 2024-03-27)
+    - [ ] Document
+    - [ ] Test
   - [ ] 9.4 IfNotUnknown
+    - [x] Implement (v0.16.0 - 2024-03-27)
+    - [ ] Document
+    - [ ] Test
   - [ ] 9.5 IfNotVoid
   - [ ] 9.6 IfNotNumber
   - [ ] 9.7 IfNotNumberLiteral
@@ -378,6 +390,9 @@ Once all planned types have been added and tested; and all issues have been reso
   - [ ] 9.28 IfNotSymbol
   - [ ] 9.29 IfNotTypedArray
   - [ ] 9.30 IfNotAnyOrNeverOrUnknown
+    - [x] Implement (v0.16.0 - 2024-03-27)
+    - [ ] Document
+    - [ ] Test
   - [ ] 9.31 IfNotNullish
 
 - [ ] **10 Selective Built-Ins**

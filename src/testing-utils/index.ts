@@ -9,3 +9,4 @@ export * from './expect-type';
 export * from './expect-not-type';
 
 export * from './if-type';
+export * from './if-not-type';

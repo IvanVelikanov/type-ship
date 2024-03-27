@@ -2,6 +2,16 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.16.0 - 2024-03-27
+
+### Added
+
+- IfNot type.
+- IfNotAny type.
+- IfNotNever type.
+- IfNotUnknown type.
+- IfNotAnyOrNeverOrUnknown type.
+
 ## 0.15.0 - 2024-03-26
 
 ### Added
