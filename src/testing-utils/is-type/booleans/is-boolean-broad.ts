@@ -1,20 +1,31 @@
 /**
- * @file Returns true if `boolean` or `true | false` are passed to it.
- * Returns false if a boolean literal (`true` or `false`) or anything else is passed.
+ * @file Returns true if `boolean` or `true | false` is passed to it.
+ * Returns false if a boolean literal (`true` OR `false`) or anything else is passed.
  */
 
-import type { IsAny } from '../any-never-unknown/is-any';
-import type { IsNever } from '../any-never-unknown/is-never';
-import type { IsUnknown } from '../any-never-unknown/is-unknown';
+/* eslint-disable @typescript-eslint/no-unused-vars -- Need this for JSDoc @link tags. */
+import type { IsBoolean } from './is-boolean';
+import type { IsBooleanLiteral } from './is-boolean-literal';
+import type { IsTrue } from './is-true';
+import type { IsFalse } from './is-false';
+/* eslint-enable @typescript-eslint/no-unused-vars -- Types actually used for IsBooleanBroad should come after this line. */
+
+import type { IsAnyOrNeverOrUnknown } from '../any-never-unknown/is-any-or-never-or-unknown';
 
 /**
  * @template TestedType
  * @description
  * Returns `true` only if one of the following values is passed to `TestedType`:
- * - `boolean`;
- * - `true | false`;
+ * - `boolean`
+ * - `true | false`
  *
  * Returns `false` otherwise.
+ *
+ * Broader variation: {@link IsBoolean}.
+ *
+ * Narrower variations: {@link IsTrue}, {@link IsFalse}.
+ *
+ * Counterpart: {@link IsBooleanLiteral}.
  * @example
  * ```
  * // Only the broad boolean type (or its alias true | false) will return true:
@@ -32,17 +43,16 @@ import type { IsUnknown } from '../any-never-unknown/is-unknown';
  * type IsBooleanBroad_String = IsBooleanBroad<string>; // false
  * type IsBooleanBroad_Number = IsBooleanBroad<number>; // false
  * ```
+ * @see
+ * Types used under the hood:
+ * - IsType: {@link IsAnyOrNeverOrUnknown}.
  */
-export type IsBooleanBroad<TestedType> = IsAny<TestedType> extends true
-  ? false
-  : IsNever<TestedType> extends true
-  ? false
-  : IsUnknown<TestedType> extends true
-  ? false
-  : boolean extends TestedType
-  ? true
-  : TestedType extends true
-  ? false
-  : TestedType extends false
-  ? false
-  : false;
+export type IsBooleanBroad<TestedType> =
+  // Necessary to test for `any`, `never`, and `unknown` early on.
+  IsAnyOrNeverOrUnknown<TestedType> extends true
+    ? false
+    : // The only thing (other than `any` and `unknown`, which was already excluded above),
+    // that type `boolean` extends is `boolean`.
+    boolean extends TestedType
+    ? true
+    : false;

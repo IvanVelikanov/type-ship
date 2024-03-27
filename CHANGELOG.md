@@ -2,6 +2,34 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.16.1 - 2024-03-27
+
+### Changed
+
+- Simplified syntax for IsBoolean type and updated its JSDoc.
+- Simplified syntax for IsBooleanBroad type and updated its JSDoc.
+- Simplified syntax for IsBooleanLiteral type and updated its JSDoc.
+- Simplified syntax for IsTrue type and updated its JSDoc.
+- Simplified syntax for IsFalse type and updated its JSDoc.
+- Updated JSDoc for IsAny type.
+- Updated JSDoc for IsNever type.
+- Updated JSDoc for IsUnknown type.
+- Updated JSDoc for IsAnyOrNeverOrUnknown type.
+- Updated JSDoc for IsNotAny type.
+- Updated JSDoc for IsNotNever type.
+- Updated JSDoc for IsNotUnknown type.
+- Updated JSDoc for IsNotAnyOrNeverOrUnknown type.
+- Updated JSDoc for If type.
+- Updated JSDoc for IfAny type.
+- Updated JSDoc for IfNever type.
+- Updated JSDoc for IfUnknown type.
+- Updated JSDoc for IfAnyOrNeverOrUnknown type.
+- Updated JSDoc for IfNot type.
+- Updated JSDoc for IfNotAny type.
+- Updated JSDoc for IfNotNever type.
+- Updated JSDoc for IfNotUnknown type.
+- Updated JSDoc for IfNotAnyOrNeverOrUnknown type.
+
 ## 0.16.0 - 2024-03-27
 
 ### Added

@@ -361,7 +361,8 @@
       "!*/",
       "!@typescript-eslint/no-unused-vars",
       "!@typescript-eslint/no-explicit-any",
-      "!jsdoc/require-example"
+      "!jsdoc/require-example",
+      "!jsdoc/check-indentation"
     ],
     "eslint-comments/no-use": [
       "error",

@@ -8,9 +8,9 @@ import type { IsNotAnyOrNeverOrUnknown } from '../../is-not-type/any-never-unkno
 
 /**
  * @description If-Else conditional that tests for `never`, `any` and `unknown`.
- * @template TestedType
- * @template IfTrue
- * @template IfFalse
+ * @template TestedType Any type can be passed to this generic.
+ * @template IfTrue The resulting type if `TestedType` is NOT `any`, `never` or `unknown`. Default: `true`.
+ * @template IfFalse The resulting type if `TestedType` is `any`, `never` or `unknown`. Default: `false`.
  * @example
  * ```
  * type TestIfNotAnyOrNeverOrUnknown_String = IfNotAnyOrNeverOrUnknown<'a string', 1, 42> // 1
@@ -19,6 +19,10 @@ import type { IsNotAnyOrNeverOrUnknown } from '../../is-not-type/any-never-unkno
  * type TestIfNotAnyOrNeverOrUnknown_Never = IfNotAnyOrNeverOrUnknown<never, 1, 42> // 42
  * type TestIfNotAnyOrNeverOrUnknown_Unknown = IfNotAnyOrNeverOrUnknown<unknown, 1, 42> // 42
  * ```
+ * @see
+ * Types used under the hood:
+ * - IfType: {@link If}
+ * - IsNotType: {@link IsNotAnyOrNeverOrUnknown}
  */
 export type IfNotAnyOrNeverOrUnknown<
   TestedType,
