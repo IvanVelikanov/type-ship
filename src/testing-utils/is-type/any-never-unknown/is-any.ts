@@ -8,7 +8,6 @@ import type { IsNever } from './is-never';
 import type { IsUnknown } from './is-unknown';
 
 import type { IsNotAny } from '../../is-not-type/any-never-unknown/is-not-any';
-import type { IfAny } from '../../if-type/any-never-unknown/if-any';
 /* eslint-enable @typescript-eslint/no-unused-vars -- Types actually used for IsNotAny should come before this codeblock. */
 
 /**
@@ -29,7 +28,6 @@ import type { IfAny } from '../../if-type/any-never-unknown/if-any';
  * @see
  * Used internally in:
  * - IsType: {@link IsAnyOrNeverOrUnknown}, {@link IsNever}, {@link IsUnknown}
- * - IfType: {@link IfAny}
  */
 export type IsAny<TestedType> = 'something' extends number & TestedType
   ? true

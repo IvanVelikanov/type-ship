@@ -1,5 +1,5 @@
 /**
- * @file Returns true if a boolean literal (`true` or `false`) is passed.
+ * @file Returns the passed boolean literal if a boolean literal (`true` or `false`) is passed.
  * Returns never if `boolean`, `true | false`, or anything else is passed to it.
  */
 
@@ -8,18 +8,18 @@ import type { IsBooleanLiteral } from '../../is-type/booleans/is-boolean-literal
 
 /**
  * @description
- * Returns `true` only if one of the following values is passed to `TestedType`:
- * - `true`;
- * - `false`;
+ * Returns the boolean type *that was passed into* `TestedType` if the passed value is one of the following:
+ * - `true`
+ * - `false`
  *
  * Raises an error and returns `never` otherwise.
  * @template TestedType Raises an error if anything other than `true` OR `false` is passed into it...
  *
- * ... Unless it's `never` -- but we don't talk about it just yet.
+ * ...Unless it's `never` -- but we don't talk about it just yet.
  * @example
  * ```
  * type ExpectBooleanLiteral_True = ExpectBooleanLiteral<true>; // true
- * type ExpectBooleanLiteral_False = ExpectBooleanLiteral<false>; // true
+ * type ExpectBooleanLiteral_False = ExpectBooleanLiteral<false>; // false
  *
  * // TS errors out on everything below:
  * type ExpectBooleanLiteral_Boolean = ExpectBooleanLiteral<boolean>; // never
@@ -38,4 +38,4 @@ export type ExpectBooleanLiteral<
     : boolean extends TestedType
     ? never
     : boolean
-> = IsBooleanLiteral<TestedType> extends true ? true : never;
+> = IsBooleanLiteral<TestedType> extends true ? TestedType : never;

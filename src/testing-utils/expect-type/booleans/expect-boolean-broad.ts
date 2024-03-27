@@ -1,5 +1,5 @@
 /**
- * @file Returns true if `boolean` or `true | false` are passed to it.
+ * @file Returns `boolean` if `boolean` or `true | false` are passed to it.
  * Returns never if a boolean literal (`true` or `false`) or anything else is passed.
  */
 
@@ -10,18 +10,18 @@ import type { IsBooleanBroad } from '../../is-type/booleans/is-boolean-broad';
 
 /**
  * @description
- * Returns `true` only if one of the following values is passed to `TestedType`:
- * - `boolean`;
- * - `true | false`;
+ * Returns `boolean` only if one of the following values is passed to `TestedType`:
+ * - `boolean`
+ * - `true | false`
  *
  * Raises an error and returns `never` otherwise.
  * @template TestedType Raises an error if anything other than `boolean` OR `true | false` is passed into it...
  *
- * ... Unless it's `never` -- but we don't talk about it just yet.
+ * ...Unless it's `never` -- but we don't talk about it just yet.
  * @example
  * ```
- * type ExpectBooleanBroad_Boolean = ExpectBooleanBroad<boolean>; // true
- * type ExpectBooleanBroad_TrueOrFalse = ExpectBooleanBroad<true | false> // true
+ * type ExpectBooleanBroad_Boolean = ExpectBooleanBroad<boolean>; // boolean
+ * type ExpectBooleanBroad_TrueOrFalse = ExpectBooleanBroad<true | false> // boolean
  *
  * // TS errors out on everything below:
  * type ExpectBooleanBroad_True = ExpectBooleanBroad<true>; // never
@@ -42,4 +42,4 @@ export type ExpectBooleanBroad<
     : IsFalse<TestedType> extends true
     ? never
     : boolean
-> = IsBooleanBroad<TestedType> extends true ? true : never;
+> = IsBooleanBroad<TestedType> extends true ? TestedType : never;

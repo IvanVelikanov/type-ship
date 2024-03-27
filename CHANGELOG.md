@@ -2,6 +2,13 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.17.0 - 2024-03-27
+
+### Changed
+
+- Modified ExpectType and ExpectNotType types (except for booleans, as the If and IfNot types for them haven't been createt as of yet) to use If and IfNot types under the hood instead of Is and IsNot types.
+- Modified ExpectType and ExpectNotType types so that - on meeting the expected condition - instead of returning true, the passed type is returned.
+
 ## 0.16.1 - 2024-03-27
 
 ### Changed

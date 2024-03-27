@@ -1,17 +1,20 @@
 /**
- * @file Returns true only if `any` is passed; never otherwise.
+ * @file Returns `any` only if `any` is passed; never otherwise.
  */
 
-import type { IsAny } from '../../is-type/any-never-unknown/is-any';
+import type { IfAny } from '../../if-type/any-never-unknown/if-any';
 
 /**
- * @description Returns `true` **only** if `any` is passed; raises an error and returns `never` otherwise.
+ * @description
+ * Returns `any` **only** if `any` is passed.
+ *
+ * Raises an error and returns `never` otherwise.
  * @template TestedType Raises an error if anything other than `any` is passed into it...
  *
- * ... Unless it's `never` -- but we don't talk about it just yet.
+ * ...Unless it's `never` -- but we don't talk about it just yet.
  * @example
  * ```
- * type ExpectAny_Any = ExpectAny<any>; // true
+ * type ExpectAny_Any = ExpectAny<any>; // any
  *
  * // TS errors out on everything below:
  * type ExpectAny_Boolean = ExpectAny<boolean>; // never
@@ -20,8 +23,11 @@ import type { IsAny } from '../../is-type/any-never-unknown/is-any';
  * type ExpectAny_String = ExpectAny<string>; // never
  * type ExpectAny_Number = ExpectAny<number>; // never
  * ```
+ * @see
+ * Types used under the hood:
+ * - IfType: {@link IfAny}
  */
 export type ExpectAny<
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Testing for `any` here, dawg, hard to get around using `any`s in this context :)
-  TestedType extends IsAny<TestedType> extends true ? any : never
-> = IsAny<TestedType> extends true ? true : never;
+  TestedType extends IfAny<TestedType, any, never>
+> = IfAny<TestedType, TestedType, never>;

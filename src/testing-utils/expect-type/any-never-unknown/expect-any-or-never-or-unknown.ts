@@ -1,27 +1,33 @@
 /**
- * @file Returns true only if any or never or unknown is passed; never otherwise.
+ * @file Expects `any`, `never` or `unknown` to be passed.
  */
 
-import type { IsAnyOrNeverOrUnknown } from '../../is-type/any-never-unknown/is-any-or-never-or-unknown';
+import type { IfAnyOrNeverOrUnknown } from '../../if-type/any-never-unknown/if-any-or-never-or-unknown';
 
 /**
- * @description Returns `true` **only** if `any`, `never` or `unknown` is passed; raises an error and returns `never` otherwise.
+ * @description
+ * Returns the type *that was passed into* `TestedType` if the passed value is one of the following:
+ * - `any`
+ * - `never`
+ * - `unknown`
+ *
+ * Raises an error and returns `never` otherwise.
  * @template TestedType Raises an error if anything other than `any`, `never` or `unknown` is passed into it...
  * @example
  * ```
- * type ExpectAnyOrNeverOrUnknown_Any = ExpectAnyOrNeverOrUnknown<any>; // true
- * type ExpectAnyOrNeverOrUnknown_Never = ExpectAnyOrNeverOrUnknown<never>; // true
- * type ExpectAnyOrNeverOrUnknown_Unknown = ExpectAnyOrNeverOrUnknown<unknown>; // true
+ * type ExpectAnyOrNeverOrUnknown_Any = ExpectAnyOrNeverOrUnknown<any>; // any
+ * type ExpectAnyOrNeverOrUnknown_Never = ExpectAnyOrNeverOrUnknown<never>; // never
+ * type ExpectAnyOrNeverOrUnknown_Unknown = ExpectAnyOrNeverOrUnknown<unknown>; // unknown
  *
  * // TS errors out on everything below:
  * type ExpectAnyOrNeverOrUnknown_Boolean = ExpectAnyOrNeverOrUnknown<boolean>; // never
  * type ExpectAnyOrNeverOrUnknown_String = ExpectAnyOrNeverOrUnknown<string>; // never
  * type ExpectAnyOrNeverOrUnknown_Number = ExpectAnyOrNeverOrUnknown<number>; // never
  * ```
+ * @see
+ * Types used under the hood:
+ * - IfType: {@link IfAnyOrNeverOrUnknown}
  */
 export type ExpectAnyOrNeverOrUnknown<
-  TestedType extends IsAnyOrNeverOrUnknown<TestedType> extends true
-    ? // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Testing for `any` here, dawg, hard to get around using `any`s in this context :)
-      any
-    : never
-> = IsAnyOrNeverOrUnknown<TestedType> extends true ? true : never;
+  TestedType extends IfAnyOrNeverOrUnknown<TestedType, unknown, never>
+> = IfAnyOrNeverOrUnknown<TestedType, TestedType, never>;

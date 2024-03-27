@@ -7,7 +7,6 @@ import type { IsAny } from './is-any';
 /* eslint-disable @typescript-eslint/no-unused-vars -- Need this for JSDoc @link tags. */
 import type { IsAnyOrNeverOrUnknown } from './is-any-or-never-or-unknown';
 import type { IsNotUnknown } from '../../is-not-type/any-never-unknown/is-not-unknown';
-import type { IfUnknown } from '../../if-type/any-never-unknown/if-unknown';
 /* eslint-enable @typescript-eslint/no-unused-vars -- Types actually used for IsUnknown should come before this codeblock. */
 
 /**
@@ -32,7 +31,6 @@ import type { IfUnknown } from '../../if-type/any-never-unknown/if-unknown';
  * @see
  * Used internally in:
  * - IsType: {@link IsAnyOrNeverOrUnknown}
- * - IfType: {@link IfUnknown}
  */
 export type IsUnknown<TestedType> =
   // `any` needs to be excluded early on.

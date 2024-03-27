@@ -7,7 +7,6 @@ import type { IsAny } from './is-any';
 /* eslint-disable @typescript-eslint/no-unused-vars -- Need this for JSDoc @link tags. */
 import type { IsAnyOrNeverOrUnknown } from './is-any-or-never-or-unknown';
 import type { IsNotNever } from '../../is-not-type/any-never-unknown/is-not-never';
-import type { IfNever } from '../../if-type/any-never-unknown/if-never';
 /* eslint-enable @typescript-eslint/no-unused-vars -- Types actually used for IsNever should come before this codeblock. */
 
 /**
@@ -51,7 +50,6 @@ type IsNeverHelper<TestedType> =
  * @see
  * Used internally in:
  * - IsType: {@link IsAnyOrNeverOrUnknown}
- * - IfType: {@link IfNever}
  */
 export type IsNever<TestedType> = IsNeverHelper<TestedType> extends never
   ? true

@@ -9,7 +9,8 @@ import type { IsNotUnknown } from './is-not-unknown';
 
 /* eslint-disable @typescript-eslint/no-unused-vars -- Need this for JSDoc @link tags. */
 import type { IsAnyOrNeverOrUnknown } from '../../is-type/any-never-unknown/is-any-or-never-or-unknown';
-/* eslint-enable @typescript-eslint/no-unused-vars -- Types actually used for IsNotNever should come before this codeblock. */
+import type { IfAnyOrNeverOrUnknown } from '../../if-type/any-never-unknown/if-any-or-never-or-unknown';
+/* eslint-enable @typescript-eslint/no-unused-vars -- Types actually used for IsNotAnyOrNeverOrUnknown should come before this codeblock. */
 
 /**
  * @template TestedType Any type can be passed to this generic.
@@ -34,7 +35,10 @@ import type { IsAnyOrNeverOrUnknown } from '../../is-type/any-never-unknown/is-a
  * ```
  * @see
  * Types used under the hood:
- * - IsNotType: {@link IsNotAny}, {@link IsNotNever}, {@link IsNotUnknown}.
+ * - IsNotType: {@link IsNotAny}, {@link IsNotNever}, {@link IsNotUnknown}
+ * @see
+ * Used internally in:
+ * - IfNotType: {@link IfAnyOrNeverOrUnknown}
  */
 export type IsNotAnyOrNeverOrUnknown<TestedType> =
   IsNotAny<TestedType> extends false

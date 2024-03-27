@@ -1,16 +1,18 @@
 /**
- * @file Returns true only if `true` is passed; never otherwise.
+ * @file Returns `true` only if `true` is passed; never otherwise.
  */
 
 import type { IsAny } from '../../is-type/any-never-unknown/is-any';
 import type { IsTrue } from '../../is-type/booleans/is-true';
 
 /**
- * @description Returns `true` **only** if `true` is passed;
- * raises an error and returns `never` otherwise.
+ * @description
+ * Returns `true` **only** if `true` is passed.
+ *
+ * Raises an error and returns `never` otherwise.
  * @template TestedType Raises an error if anything other than `true` is passed into it...
  *
- * ... Unless it's `never` -- but we don't talk about it just yet.
+ * ...Unless it's `never` -- but we don't talk about it just yet.
  * @example
  * ```
  * type ExpectTrue_True = ExpectTrue<true>; // true
@@ -27,4 +29,4 @@ import type { IsTrue } from '../../is-type/booleans/is-true';
  */
 export type ExpectTrue<
   TestedType extends IsAny<TestedType> extends true ? never : true
-> = IsTrue<TestedType> extends true ? true : never;
+> = IsTrue<TestedType> extends true ? TestedType : never;

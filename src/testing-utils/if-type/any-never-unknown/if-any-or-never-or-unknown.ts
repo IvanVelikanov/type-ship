@@ -6,6 +6,10 @@ import type { If } from '../if/if';
 
 import type { IsAnyOrNeverOrUnknown } from '../../is-type/any-never-unknown/is-any-or-never-or-unknown';
 
+/* eslint-disable @typescript-eslint/no-unused-vars -- Need this for JSDoc @link tags. */
+import type { ExpectAnyOrNeverOrUnknown } from '../../expect-type/any-never-unknown/expect-any-or-never-or-unknown';
+/* eslint-enable @typescript-eslint/no-unused-vars -- Types actually used for IfAnyOrNeverOrUnknown should come before this codeblock. */
+
 /**
  * @description If-Else conditional that tests for `never`, `any` and `unknown`.
  * @template TestedType Any type can be passed to this generic.
@@ -23,6 +27,9 @@ import type { IsAnyOrNeverOrUnknown } from '../../is-type/any-never-unknown/is-a
  * Types used under the hood:
  * - IfType: {@link If}
  * - IsType: {@link IsAnyOrNeverOrUnknown}
+ * @see
+ * Used internally in:
+ * - ExpectType: {@link ExpectAnyOrNeverOrUnknown}
  */
 export type IfAnyOrNeverOrUnknown<
   TestedType,
