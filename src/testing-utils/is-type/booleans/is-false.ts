@@ -45,6 +45,8 @@ export type IsFalse<TestedType> =
     // results in `boolean`. Not `true` OR `false` -- exactly `boolean.`
     true extends TestedType
     ? false
-    : TestedType extends false
+    : boolean extends TestedType
+    ? false
+    : false extends TestedType
     ? true
     : false;

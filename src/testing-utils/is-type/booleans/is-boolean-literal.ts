@@ -3,15 +3,17 @@
  * Returns false if `boolean`, `true | false`, or anything else is passed to it.
  */
 
+import type { IsTrue } from './is-true';
+import type { IsFalse } from './is-false';
+
 /* eslint-disable @typescript-eslint/no-unused-vars -- Need this for JSDoc @link tags. */
 import type { IsBoolean } from './is-boolean';
 import type { IsBooleanBroad } from './is-boolean-broad';
-import type { IsTrue } from './is-true';
-import type { IsFalse } from './is-false';
+
+import type { IfBooleanLiteral } from '../../if-type/booleans/if-boolean-literal';
 /* eslint-enable @typescript-eslint/no-unused-vars -- Types actually used for IsBooleanLiteral should come after this line. */
 
-import type { IsAnyOrNeverOrUnknown } from '../any-never-unknown/is-any-or-never-or-unknown';
-
+/* eslint-disable jsdoc/require-description-complete-sentence -- No idea why I get this error on the @todo tag. Will fix it later.*/
 /**
  * @template TestedType
  * @description
@@ -43,20 +45,34 @@ import type { IsAnyOrNeverOrUnknown } from '../any-never-unknown/is-any-or-never
  * type IsBooleanLiteral_String = IsBooleanLiteral<string>; // false
  * type IsBooleanLiteral_Number = IsBooleanLiteral<number>; // false
  * ```
+ * @todo
+ * **Issue #1:**
+ *
+ * Up until version 0.18.0, the implementation of this type looked like this:
+ * ```
+ * IsBooleanLiteral<TestedType> =
+ *   IsAnyOrNeverOrUnknown<TestedType> extends true
+ *    ? false
+ *    : boolean extends TestedType
+ *    ? false
+ *    : TestedType extends true
+ *    ? true
+ *    : TestedType extends false
+ *    ? true
+ *    : false;
+ * ```
+ * However, that resulted in {@link https://github.com/microsoft/TypeScript/issues/51011 TS 2313 Circular Constraint Error}.
+ * Investigate later.
  * @see
  * Types used under the hood:
- * - IsType: {@link IsAnyOrNeverOrUnknown}.
+ * - IsType: {@link IsTrue}, {@link @IsFalse}
+ * @see
+ * Used internally in:
+ * - IfType: {@link IfBooleanLiteral}
  */
-export type IsBooleanLiteral<TestedType> =
-  // Necessary to test for `any`, `never`, and `unknown` early on.
-  IsAnyOrNeverOrUnknown<TestedType> extends true
-    ? false
-    : // The condition below tests for broad boolean type,
-    // and hence needs to be excluded.
-    boolean extends TestedType
-    ? false
-    : TestedType extends true
-    ? true
-    : TestedType extends false
-    ? true
-    : false;
+export type IsBooleanLiteral<TestedType> = IsTrue<TestedType> extends true
+  ? true
+  : IsFalse<TestedType> extends true
+  ? true
+  : false;
+/* eslint-enable jsdoc/require-description-complete-sentence -- No idea why I get this error on the @todo tag. Will fix it later.*/

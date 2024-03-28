@@ -4,8 +4,7 @@
  * Returns never otherwise.
  */
 
-import type { IsAny } from '../../is-type/any-never-unknown/is-any';
-import type { IsBoolean } from '../../is-type/booleans/is-boolean';
+import type { IfBoolean } from '../../if-type/booleans/if-boolean';
 
 /**
  * @description
@@ -33,7 +32,10 @@ import type { IsBoolean } from '../../is-type/booleans/is-boolean';
  * type ExpectBoolean_String = ExpectBoolean<string>; // never
  * type ExpectBoolean_Number = ExpectBoolean<number>; // never
  * ```
+ * @see
+ * Types used under the hood:
+ * - IfType: {@link IfBoolean}
  */
 export type ExpectBoolean<
-  TestedType extends IsAny<TestedType> extends true ? never : boolean
-> = IsBoolean<TestedType> extends true ? TestedType : never;
+  TestedType extends IfBoolean<TestedType, boolean, never>
+> = IfBoolean<TestedType, TestedType, never>;

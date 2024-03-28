@@ -3,8 +3,7 @@
  * Returns never if `boolean`, `true | false`, or anything else is passed to it.
  */
 
-import type { IsAny } from '../../is-type/any-never-unknown/is-any';
-import type { IsBooleanLiteral } from '../../is-type/booleans/is-boolean-literal';
+import type { IfBooleanLiteral } from '../../if-type/booleans/if-boolean-literal';
 
 /**
  * @description
@@ -31,11 +30,10 @@ import type { IsBooleanLiteral } from '../../is-type/booleans/is-boolean-literal
  * type ExpectBooleanLiteral_String = ExpectBooleanLiteral<string>; // never
  * type ExpectBooleanLiteral_Number = ExpectBooleanLiteral<number>; // never
  * ```
+ * @see
+ * Types used under the hood:
+ * - IfType: {@link IfBooleanLiteral}
  */
 export type ExpectBooleanLiteral<
-  TestedType extends IsAny<TestedType> extends true
-    ? never
-    : boolean extends TestedType
-    ? never
-    : boolean
-> = IsBooleanLiteral<TestedType> extends true ? TestedType : never;
+  TestedType extends IfBooleanLiteral<TestedType, boolean, never>
+> = IfBooleanLiteral<TestedType, TestedType, never>;

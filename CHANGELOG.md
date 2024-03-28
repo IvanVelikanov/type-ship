@@ -2,6 +2,24 @@
 
 All notable changes to the project shall be documented here.
 
+## 0.18.0 - 2024-03-28
+
+### Added
+
+- IfBoolean type.
+- IfBooleanBroad type.
+- IfBooleanLiteral type.
+- IfTrue type.
+- IfFalse type.
+
+### Changed
+
+- ExpectBoolean type to use IfBoolean instead of IsBoolean under the hood.
+- ExpectBooleanBroad type to use IfBooleanBroad instead of IsBooleanBroad under the hood.
+- ExpectBooleanLiteral type to use IfBooleanLiteral instead of IsBooleanLiteral under the hood.
+- ExpectTrue type to use IfTrue instead of IsTrue under the hood.
+- ExpectFalse type to use IfFalse instead of IsFalse under the hood.
+
 ## 0.17.0 - 2024-03-27
 
 ### Changed

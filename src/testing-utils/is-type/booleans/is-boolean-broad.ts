@@ -8,6 +8,8 @@ import type { IsBoolean } from './is-boolean';
 import type { IsBooleanLiteral } from './is-boolean-literal';
 import type { IsTrue } from './is-true';
 import type { IsFalse } from './is-false';
+
+import type { IfBooleanBroad } from '../../if-type/booleans/if-boolean-broad';
 /* eslint-enable @typescript-eslint/no-unused-vars -- Types actually used for IsBooleanBroad should come after this line. */
 
 import type { IsAnyOrNeverOrUnknown } from '../any-never-unknown/is-any-or-never-or-unknown';
@@ -45,7 +47,10 @@ import type { IsAnyOrNeverOrUnknown } from '../any-never-unknown/is-any-or-never
  * ```
  * @see
  * Types used under the hood:
- * - IsType: {@link IsAnyOrNeverOrUnknown}.
+ * - IsType: {@link IsAnyOrNeverOrUnknown}
+ * @see
+ * Used internally in:
+ * - IfType: {@link IfBooleanBroad}
  */
 export type IsBooleanBroad<TestedType> =
   // Necessary to test for `any`, `never`, and `unknown` early on.

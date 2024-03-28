@@ -3,10 +3,7 @@
  * Returns never if a boolean literal (`true` or `false`) or anything else is passed.
  */
 
-import type { IsAny } from '../../is-type/any-never-unknown/is-any';
-import type { IsTrue } from '../../is-type/booleans/is-true';
-import type { IsFalse } from '../../is-type/booleans/is-false';
-import type { IsBooleanBroad } from '../../is-type/booleans/is-boolean-broad';
+import type { IfBooleanBroad } from '../../if-type/booleans/if-boolean-broad';
 
 /**
  * @description
@@ -33,13 +30,10 @@ import type { IsBooleanBroad } from '../../is-type/booleans/is-boolean-broad';
  * type ExpectBooleanBroad_String = ExpectBooleanBroad<string>; // never
  * type ExpectBooleanBroad_Number = ExpectBooleanBroad<number>; // never
  * ```
+ * @see
+ * Types used under the hood:
+ * - IfType: {@link IfBooleanBroad}
  */
 export type ExpectBooleanBroad<
-  TestedType extends IsAny<TestedType> extends true
-    ? never
-    : IsTrue<TestedType> extends true
-    ? never
-    : IsFalse<TestedType> extends true
-    ? never
-    : boolean
-> = IsBooleanBroad<TestedType> extends true ? TestedType : never;
+  TestedType extends IfBooleanBroad<TestedType, boolean, never>
+> = IfBooleanBroad<TestedType, TestedType, never>;

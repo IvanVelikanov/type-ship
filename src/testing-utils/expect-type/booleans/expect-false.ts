@@ -2,8 +2,7 @@
  * @file Returns `false` only if `false` is passed; never otherwise.
  */
 
-import type { IsAny } from '../../is-type/any-never-unknown/is-any';
-import type { IsFalse } from '../../is-type/booleans/is-false';
+import type { IfFalse } from '../../if-type/booleans/if-false';
 
 /**
  * @description
@@ -28,5 +27,5 @@ import type { IsFalse } from '../../is-type/booleans/is-false';
  * ```
  */
 export type ExpectFalse<
-  TestedType extends IsAny<TestedType> extends true ? never : false
-> = IsFalse<TestedType> extends true ? TestedType : never;
+  TestedType extends IfFalse<TestedType, boolean, never>
+> = IfFalse<TestedType, TestedType, never>;
